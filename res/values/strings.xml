@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">华夏壹分期</string>
+    <string name="title_activity_attachment_upload">AttachmentUploadActivity</string>
+    <string name="title_activity_school_info">SchoolInfoActivity</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="SMS_get_methods">移动用户\n方法一：手机拨打10086，转\"人工服务\"\n方法二：登录官网www.10086.cn或移动掌厅APP，\n获取查询密码\n\n联通用户\n方法一：手机拨打10010，转\"人工服务\"\n方法二：登录官网www.10010.cn或联通掌厅APP，\n获取查询密码\n\n电信用户\n方法一：手机拨打10000，转\"人工服务\"\n方法二：登录官网www.10000.cn或电信掌厅APP，\n获取查询密码</string>
+    <string name="bankcard_reminder">重要提示：此卡用于在指定还款日系统代扣每期应还金额，请您选择您日常使用的银行卡。</string>
+    <string name="contact_reminder">选择联系人后请修改真实姓名</string>
+    <string name="SMS_important_inform">吉林电信客户请使用本机发送CXXD至10001获取短信验证码</string>
+    <string name="cert_title">至少上传一项：二代身份证、手持身份证自拍照、临时身份证+户口本、临时身份证+驾驶证</string>
+    <string name="student_title">至少上传一项：学生证、校园一卡通、学信网</string>
+    <string name="work_title">上传材料：工牌、劳动合同、单位开具的工作证明、营业执照</string>
+    <string name="finance_title">上传材料：房产资料、车产资料、保单、理财证明</string>
+    <string name="zhengxin_title">上传材料：简版、详版</string>
+    <string name="flow_title">上传材料：工资流水、个人交易明细</string>
+    <string name="shoufu_title">上传材料：首次支付凭证</string>
+    <string name="other_title">上传材料：手术通知单、订购单</string>
+    <string name="default_title">其他凭证</string>
+    <string-array name="marital_status">
+        <item>已婚</item>
+        <item>未婚</item>
+        <item>离异</item>
+        <item>丧偶</item>
+    </string-array>
+    <string-array name="education">
+        <item>大专以下</item>
+        <item>大专</item>
+        <item>本科</item>
+        <item>研究生及以上</item>
+    </string-array>
+    <string-array name="education_student">
+
+        <item>大专</item>
+        <item>本科</item>
+        <item>研究生及以上</item>
+    </string-array>
+    <string-array name="realEstate">
+        <item>自有房产，无按揭</item>
+        <item>自有房产，有按揭</item>
+        <item>亲属房产</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="relation">
+        <item>父亲</item>
+        <item>母亲</item>
+        <item>配偶</item>
+        <item>子女</item>
+        <item>兄弟姐妹</item>
+
+    </string-array>
+
+    <string-array name="income_level">
+        <item>500以下</item>
+        <item>500-1000</item>
+        <item>1000-1500</item>
+        <item>1500-2000</item>
+        <item>2000以上</item>
+    </string-array>
+    <string-array name="part_time">
+        <item>是</item>
+        <item>否</item>
+    </string-array>
+    <string-array name="unit_of_nature">
+        <item>政府机关</item>
+        <item>事业单位</item>
+        <item>国企</item>
+        <item>外企</item>
+        <item>合资</item>
+        <item>民营</item>
+        <item>私企</item>
+        <item>个体</item>
+    </string-array>
+    <string-array name="bank_card_name">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
+        <item>中国银行</item>
+        <item>中国光大银行</item>
+        <item>中信银行</item>
+        <item>广东发展银行</item>
+        <item>平安银行</item>
+        <item>中国民生银行</item>
+        <item>中国建设银行</item>
+        <item>交通银行</item>
+        <item>兴业银行</item>
+        <item>招商银行</item>
+        <item>上海浦东发展银行</item>
+        <item>华夏银行</item>
+    </string-array>
+</resources>

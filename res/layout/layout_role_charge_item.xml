@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="204dp"
+    android:orientation="horizontal">
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:background="@color/app_view_color"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitesmoke"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/app_view_color"
+            />
+
+        <ImageView
+            android:id="@+id/iv_role"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/worker_icon"
+            />
+        <TextView
+            android:id="@+id/tv_role_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="我是自由职业者"
+            android:textColor="@color/app_pass_color"
+            android:textSize="@dimen/sp17" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="超低利率，便捷分期"
+            android:textColor="@color/text_hint_color"
+            android:textSize="@dimen/item_name" />
+    </LinearLayout>
+
+</LinearLayout>

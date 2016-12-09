@@ -1,0 +1,44 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--设计字体-->
+    <dimen name="title_font">17sp</dimen>
+    <dimen name="item_name">15sp</dimen>
+    <dimen name="submit_font">16sp</dimen>
+    <dimen name="pass_font">14sp</dimen>
+    <dimen name="text_font">10sp</dimen>
+    <dimen name="order_success_font">24sp</dimen>
+
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp26">26sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+
+    <dimen name="item_height">44dp</dimen>
+    <dimen name="margin_left1">15dp</dimen>
+    <dimen name="margin_left2">30dp</dimen>
+    <dimen name="margin_left3">60dp</dimen>
+    <dimen name="margin_left4">45dp</dimen>
+    <dimen name="margin_right1">15dp</dimen>
+
+
+    <!-- 字体大小-->
+    <dimen name="font0">12sp</dimen>
+    <dimen name="font1">14sp</dimen>
+    <dimen name="font2">16sp</dimen>
+    <dimen name="font3">18sp</dimen>
+    <dimen name="font4">20sp</dimen>
+    <dimen name="font5">22sp</dimen>
+
+    <dimen name="padding0">5dp</dimen>
+    <dimen name="padding1">6dp</dimen>
+    <dimen name="padding2">7dp</dimen>
+    <dimen name="padding3">8dp</dimen>
+    <dimen name="padding4">9dp</dimen>
+    <dimen name="padding5">10dp</dimen>
+</resources>

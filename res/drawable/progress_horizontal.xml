@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- layer-list表示层级关系 -->
+    <!-- 背景 -->
+    <item android:id="@android:id/background">
+        <shape>
+
+            <solid android:color="#ffffff" />
+        </shape>
+    </item>
+    <!-- 副进度条 (第二进度条) -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+
+<!--                 <corners android:radius="5dip" /> -->
+                <!-- <gradient -->
+                <!-- android:startColor="#80ffd300" -->
+                <!-- android:centerColor="#80ffb600" -->
+                <!-- android:centerY="0.75" -->
+                <!-- android:endColor="#a0ffcb00" -->
+                <!-- android:angle="270" -->
+                <!-- /> -->
+                <solid android:color="@color/progress_color" />
+            </shape>
+        </clip>
+    </item>
+    <!-- 主进度条 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+
+                <solid android:color="@color/progress_color" />
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

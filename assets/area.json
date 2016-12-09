@@ -1,0 +1,2376 @@
+[
+  {
+    "areaCode": "320000",
+    "areaName": "江苏省",
+    "pid": "000000",
+    "sort": 35,
+    "zones": [
+      {
+        "areaCode": "320100",
+        "areaName": "南京市",
+        "pid": "320000",
+        "id": 157
+      },
+      {
+        "areaCode": "320200",
+        "areaName": "无锡市",
+        "pid": "320000",
+        "id": 158
+      },
+      {
+        "areaCode": "320300",
+        "areaName": "徐州市",
+        "pid": "320000",
+        "id": 159
+      },
+      {
+        "areaCode": "320400",
+        "areaName": "常州市",
+        "pid": "320000",
+        "id": 160
+      },
+      {
+        "areaCode": "320500",
+        "areaName": "苏州市",
+        "pid": "320000",
+        "id": 161
+      },
+      {
+        "areaCode": "320600",
+        "areaName": "南通市",
+        "pid": "320000",
+        "id": 162
+      },
+      {
+        "areaCode": "320700",
+        "areaName": "连云港市",
+        "pid": "320000",
+        "id": 163
+      },
+      {
+        "areaCode": "320800",
+        "areaName": "淮安市",
+        "pid": "320000",
+        "id": 164
+      },
+      {
+        "areaCode": "320900",
+        "areaName": "盐城市",
+        "pid": "320000",
+        "id": 165
+      },
+      {
+        "areaCode": "321000",
+        "areaName": "扬州市",
+        "pid": "320000",
+        "id": 166
+      },
+      {
+        "areaCode": "321100",
+        "areaName": "镇江市",
+        "pid": "320000",
+        "id": 167
+      },
+      {
+        "areaCode": "321200",
+        "areaName": "泰州市",
+        "pid": "320000",
+        "id": 168
+      },
+      {
+        "areaCode": "321300",
+        "areaName": "宿迁市",
+        "pid": "320000",
+        "id": 169
+      }
+    ],
+    "id": 8
+  },
+  {
+    "areaCode": "310000",
+    "areaName": "上海市",
+    "pid": "000000",
+    "sort": 34,
+    "zones": [
+      {
+        "areaCode": "310100",
+        "areaName": "市辖区",
+        "pid": "310000",
+        "id": 154
+      },
+      {
+        "areaCode": "310200",
+        "areaName": "县",
+        "pid": "310000",
+        "id": 155
+      }
+    ],
+    "id": 7
+  },
+  {
+    "areaCode": "130000",
+    "areaName": "河北省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "130100",
+        "areaName": "石家庄市",
+        "pid": "130000",
+        "id": 64
+      },
+      {
+        "areaCode": "130200",
+        "areaName": "唐山市",
+        "pid": "130000",
+        "id": 65
+      },
+      {
+        "areaCode": "130300",
+        "areaName": "秦皇岛市",
+        "pid": "130000",
+        "id": 66
+      },
+      {
+        "areaCode": "130400",
+        "areaName": "邯郸市",
+        "pid": "130000",
+        "id": 67
+      },
+      {
+        "areaCode": "130500",
+        "areaName": "邢台市",
+        "pid": "130000",
+        "id": 68
+      },
+      {
+        "areaCode": "130600",
+        "areaName": "保定市",
+        "pid": "130000",
+        "id": 69
+      },
+      {
+        "areaCode": "130700",
+        "areaName": "张家口市",
+        "pid": "130000",
+        "id": 70
+      },
+      {
+        "areaCode": "130800",
+        "areaName": "承德市",
+        "pid": "130000",
+        "id": 71
+      },
+      {
+        "areaCode": "130900",
+        "areaName": "沧州市",
+        "pid": "130000",
+        "id": 72
+      },
+      {
+        "areaCode": "131000",
+        "areaName": "廊坊市",
+        "pid": "130000",
+        "id": 73
+      },
+      {
+        "areaCode": "131100",
+        "areaName": "衡水市",
+        "pid": "130000",
+        "id": 74
+      }
+    ],
+    "id": 1
+  },
+  {
+    "areaCode": "610000",
+    "areaName": "陕西省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "610100",
+        "areaName": "西安市",
+        "pid": "610000",
+        "id": 476
+      },
+      {
+        "areaCode": "610200",
+        "areaName": "铜川市",
+        "pid": "610000",
+        "id": 477
+      },
+      {
+        "areaCode": "610300",
+        "areaName": "宝鸡市",
+        "pid": "610000",
+        "id": 478
+      },
+      {
+        "areaCode": "610400",
+        "areaName": "咸阳市",
+        "pid": "610000",
+        "id": 479
+      },
+      {
+        "areaCode": "610500",
+        "areaName": "渭南市",
+        "pid": "610000",
+        "id": 480
+      },
+      {
+        "areaCode": "610600",
+        "areaName": "延安市",
+        "pid": "610000",
+        "id": 481
+      },
+      {
+        "areaCode": "610700",
+        "areaName": "汉中市",
+        "pid": "610000",
+        "id": 482
+      },
+      {
+        "areaCode": "610800",
+        "areaName": "榆林市",
+        "pid": "610000",
+        "id": 483
+      },
+      {
+        "areaCode": "610900",
+        "areaName": "安康市",
+        "pid": "610000",
+        "id": 484
+      },
+      {
+        "areaCode": "611000",
+        "areaName": "商洛市",
+        "pid": "610000",
+        "id": 485
+      }
+    ],
+    "id": 25
+  },
+  {
+    "areaCode": "540000",
+    "areaName": "西藏自治区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "540100",
+        "areaName": "拉萨市",
+        "pid": "540000",
+        "id": 469
+      },
+      {
+        "areaCode": "542100",
+        "areaName": "昌都地区",
+        "pid": "540000",
+        "id": 470
+      },
+      {
+        "areaCode": "542200",
+        "areaName": "山南地区",
+        "pid": "540000",
+        "id": 471
+      },
+      {
+        "areaCode": "542300",
+        "areaName": "日喀则地区",
+        "pid": "540000",
+        "id": 472
+      },
+      {
+        "areaCode": "542400",
+        "areaName": "那曲地区",
+        "pid": "540000",
+        "id": 473
+      },
+      {
+        "areaCode": "542500",
+        "areaName": "阿里地区",
+        "pid": "540000",
+        "id": 474
+      },
+      {
+        "areaCode": "542600",
+        "areaName": "林芝地区",
+        "pid": "540000",
+        "id": 475
+      }
+    ],
+    "id": 24
+  },
+  {
+    "areaCode": "530000",
+    "areaName": "云南省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "530100",
+        "areaName": "昆明市",
+        "pid": "530000",
+        "id": 438
+      },
+      {
+        "areaCode": "530300",
+        "areaName": "曲靖市",
+        "pid": "530000",
+        "id": 439
+      },
+      {
+        "areaCode": "530400",
+        "areaName": "玉溪市",
+        "pid": "530000",
+        "id": 440
+      },
+      {
+        "areaCode": "530500",
+        "areaName": "保山市",
+        "pid": "530000",
+        "id": 441
+      },
+      {
+        "areaCode": "530600",
+        "areaName": "昭通市",
+        "pid": "530000",
+        "id": 442
+      },
+      {
+        "areaCode": "530700",
+        "areaName": "丽江市",
+        "pid": "530000",
+        "id": 443
+      },
+      {
+        "areaCode": "530800",
+        "areaName": "思茅市",
+        "pid": "530000",
+        "id": 444
+      },
+      {
+        "areaCode": "530900",
+        "areaName": "临沧市",
+        "pid": "530000",
+        "id": 445
+      },
+      {
+        "areaCode": "532300",
+        "areaName": "楚雄彝族自治州",
+        "pid": "530000",
+        "id": 446
+      },
+      {
+        "areaCode": "532500",
+        "areaName": "红河哈尼族彝族自治州",
+        "pid": "530000",
+        "id": 447
+      },
+      {
+        "areaCode": "532600",
+        "areaName": "文山壮族苗族自治州",
+        "pid": "530000",
+        "id": 448
+      },
+      {
+        "areaCode": "532800",
+        "areaName": "西双版纳傣族自治州",
+        "pid": "530000",
+        "id": 449
+      },
+      {
+        "areaCode": "532900",
+        "areaName": "大理白族自治州",
+        "pid": "530000",
+        "id": 450
+      },
+      {
+        "areaCode": "533100",
+        "areaName": "德宏傣族景颇族自治州",
+        "pid": "530000",
+        "id": 451
+      },
+      {
+        "areaCode": "533300",
+        "areaName": "怒江傈僳族自治州",
+        "pid": "530000",
+        "id": 452
+      },
+      {
+        "areaCode": "533400",
+        "areaName": "迪庆藏族自治州",
+        "pid": "530000",
+        "id": 453
+      }
+    ],
+    "id": 23
+  },
+  {
+    "areaCode": "520000",
+    "areaName": "贵州省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "520100",
+        "areaName": "贵阳市",
+        "pid": "520000",
+        "id": 423
+      },
+      {
+        "areaCode": "520200",
+        "areaName": "六盘水市",
+        "pid": "520000",
+        "id": 424
+      },
+      {
+        "areaCode": "520300",
+        "areaName": "遵义市",
+        "pid": "520000",
+        "id": 425
+      },
+      {
+        "areaCode": "520400",
+        "areaName": "安顺市",
+        "pid": "520000",
+        "id": 426
+      },
+      {
+        "areaCode": "522200",
+        "areaName": "铜仁地区",
+        "pid": "520000",
+        "id": 427
+      },
+      {
+        "areaCode": "522300",
+        "areaName": "黔西南布依族苗族自治州",
+        "pid": "520000",
+        "id": 428
+      },
+      {
+        "areaCode": "522400",
+        "areaName": "毕节地区",
+        "pid": "520000",
+        "id": 429
+      },
+      {
+        "areaCode": "522600",
+        "areaName": "黔东南苗族侗族自治州",
+        "pid": "520000",
+        "id": 430
+      },
+      {
+        "areaCode": "522700",
+        "areaName": "黔南布依族苗族自治州",
+        "pid": "520000",
+        "id": 431
+      }
+    ],
+    "id": 22
+  },
+  {
+    "areaCode": "510000",
+    "areaName": "四川省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "510100",
+        "areaName": "成都市",
+        "pid": "510000",
+        "id": 392
+      },
+      {
+        "areaCode": "510300",
+        "areaName": "自贡市",
+        "pid": "510000",
+        "id": 393
+      },
+      {
+        "areaCode": "510400",
+        "areaName": "攀枝花市",
+        "pid": "510000",
+        "id": 394
+      },
+      {
+        "areaCode": "510500",
+        "areaName": "泸州市",
+        "pid": "510000",
+        "id": 395
+      },
+      {
+        "areaCode": "510600",
+        "areaName": "德阳市",
+        "pid": "510000",
+        "id": 396
+      },
+      {
+        "areaCode": "510700",
+        "areaName": "绵阳市",
+        "pid": "510000",
+        "id": 397
+      },
+      {
+        "areaCode": "510800",
+        "areaName": "广元市",
+        "pid": "510000",
+        "id": 398
+      },
+      {
+        "areaCode": "510900",
+        "areaName": "遂宁市",
+        "pid": "510000",
+        "id": 399
+      },
+      {
+        "areaCode": "511000",
+        "areaName": "内江市",
+        "pid": "510000",
+        "id": 400
+      },
+      {
+        "areaCode": "511100",
+        "areaName": "乐山市",
+        "pid": "510000",
+        "id": 401
+      },
+      {
+        "areaCode": "511300",
+        "areaName": "南充市",
+        "pid": "510000",
+        "id": 402
+      },
+      {
+        "areaCode": "511400",
+        "areaName": "眉山市",
+        "pid": "510000",
+        "id": 403
+      },
+      {
+        "areaCode": "511500",
+        "areaName": "宜宾市",
+        "pid": "510000",
+        "id": 404
+      },
+      {
+        "areaCode": "511600",
+        "areaName": "广安市",
+        "pid": "510000",
+        "id": 405
+      },
+      {
+        "areaCode": "511700",
+        "areaName": "达州市",
+        "pid": "510000",
+        "id": 406
+      },
+      {
+        "areaCode": "511800",
+        "areaName": "雅安市",
+        "pid": "510000",
+        "id": 407
+      },
+      {
+        "areaCode": "511900",
+        "areaName": "巴中市",
+        "pid": "510000",
+        "id": 408
+      },
+      {
+        "areaCode": "512000",
+        "areaName": "资阳市",
+        "pid": "510000",
+        "id": 409
+      },
+      {
+        "areaCode": "513000",
+        "areaName": "自贡市",
+        "pid": "510000",
+        "id": 410
+      },
+      {
+        "areaCode": "513200",
+        "areaName": "阿坝藏族羌族自治州",
+        "pid": "510000",
+        "id": 411
+      },
+      {
+        "areaCode": "513300",
+        "areaName": "甘孜藏族自治州",
+        "pid": "510000",
+        "id": 412
+      },
+      {
+        "areaCode": "513400",
+        "areaName": "凉山彝族自治州",
+        "pid": "510000",
+        "id": 413
+      },
+      {
+        "areaCode": "516900",
+        "areaName": "科学城",
+        "pid": "510000",
+        "id": 414
+      }
+    ],
+    "id": 21
+  },
+  {
+    "areaCode": "500000",
+    "areaName": "重庆市",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "500100",
+        "areaName": "市辖区",
+        "pid": "500000",
+        "id": 389
+      },
+      {
+        "areaCode": "500200",
+        "areaName": "县",
+        "pid": "500000",
+        "id": 390
+      },
+      {
+        "areaCode": "500300",
+        "areaName": "市",
+        "pid": "500000",
+        "id": 391
+      }
+    ],
+    "id": 20
+  },
+  {
+    "areaCode": "620000",
+    "areaName": "甘肃省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "620100",
+        "areaName": "兰州市",
+        "pid": "620000",
+        "id": 491
+      },
+      {
+        "areaCode": "620200",
+        "areaName": "嘉峪关市",
+        "pid": "620000",
+        "id": 492
+      },
+      {
+        "areaCode": "620300",
+        "areaName": "金昌市",
+        "pid": "620000",
+        "id": 493
+      },
+      {
+        "areaCode": "620400",
+        "areaName": "白银市",
+        "pid": "620000",
+        "id": 494
+      },
+      {
+        "areaCode": "620500",
+        "areaName": "天水市",
+        "pid": "620000",
+        "id": 495
+      },
+      {
+        "areaCode": "620600",
+        "areaName": "武威市",
+        "pid": "620000",
+        "id": 496
+      },
+      {
+        "areaCode": "620700",
+        "areaName": "张掖市",
+        "pid": "620000",
+        "id": 497
+      },
+      {
+        "areaCode": "620800",
+        "areaName": "平凉市",
+        "pid": "620000",
+        "id": 498
+      },
+      {
+        "areaCode": "620900",
+        "areaName": "酒泉市",
+        "pid": "620000",
+        "id": 499
+      },
+      {
+        "areaCode": "621000",
+        "areaName": "庆阳市",
+        "pid": "620000",
+        "id": 500
+      },
+      {
+        "areaCode": "621100",
+        "areaName": "定西市",
+        "pid": "620000",
+        "id": 501
+      },
+      {
+        "areaCode": "621200",
+        "areaName": "陇南市",
+        "pid": "620000",
+        "id": 502
+      },
+      {
+        "areaCode": "622900",
+        "areaName": "临夏回族自治州",
+        "pid": "620000",
+        "id": 503
+      },
+      {
+        "areaCode": "623000",
+        "areaName": "甘南藏族自治州",
+        "pid": "620000",
+        "id": 504
+      }
+    ],
+    "id": 26
+  },
+  {
+    "areaCode": "630000",
+    "areaName": "青海省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "630100",
+        "areaName": "西宁市",
+        "pid": "630000",
+        "id": 506
+      },
+      {
+        "areaCode": "632100",
+        "areaName": "海东地区",
+        "pid": "630000",
+        "id": 507
+      },
+      {
+        "areaCode": "632200",
+        "areaName": "海北藏族自治州",
+        "pid": "630000",
+        "id": 508
+      },
+      {
+        "areaCode": "632300",
+        "areaName": "黄南藏族自治州",
+        "pid": "630000",
+        "id": 509
+      },
+      {
+        "areaCode": "632500",
+        "areaName": "海南藏族自治州",
+        "pid": "630000",
+        "id": 510
+      },
+      {
+        "areaCode": "632600",
+        "areaName": "果洛藏族自治州",
+        "pid": "630000",
+        "id": 511
+      },
+      {
+        "areaCode": "632700",
+        "areaName": "玉树藏族自治州",
+        "pid": "630000",
+        "id": 512
+      },
+      {
+        "areaCode": "632800",
+        "areaName": "海西蒙古族藏族自治州",
+        "pid": "630000",
+        "id": 513
+      }
+    ],
+    "id": 27
+  },
+  {
+    "areaCode": "640000",
+    "areaName": "宁夏回族自治区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "640100",
+        "areaName": "银川市",
+        "pid": "640000",
+        "id": 521
+      },
+      {
+        "areaCode": "640200",
+        "areaName": "石嘴山市",
+        "pid": "640000",
+        "id": 522
+      },
+      {
+        "areaCode": "640300",
+        "areaName": "吴忠市",
+        "pid": "640000",
+        "id": 523
+      },
+      {
+        "areaCode": "640400",
+        "areaName": "固原市",
+        "pid": "640000",
+        "id": 524
+      },
+      {
+        "areaCode": "640500",
+        "areaName": "中卫市",
+        "pid": "640000",
+        "id": 525
+      }
+    ],
+    "id": 28
+  },
+  {
+    "areaCode": "650000",
+    "areaName": "新疆维吾尔自治区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "650100",
+        "areaName": "乌鲁木齐市",
+        "pid": "650000",
+        "id": 528
+      },
+      {
+        "areaCode": "650200",
+        "areaName": "克拉玛依市",
+        "pid": "650000",
+        "id": 529
+      },
+      {
+        "areaCode": "652100",
+        "areaName": "吐鲁番地区",
+        "pid": "650000",
+        "id": 530
+      },
+      {
+        "areaCode": "652200",
+        "areaName": "哈密地区",
+        "pid": "650000",
+        "id": 531
+      },
+      {
+        "areaCode": "652300",
+        "areaName": "昌吉回族自治州",
+        "pid": "650000",
+        "id": 532
+      },
+      {
+        "areaCode": "652700",
+        "areaName": "博尔塔拉蒙古自治州",
+        "pid": "650000",
+        "id": 533
+      },
+      {
+        "areaCode": "652800",
+        "areaName": "巴音郭楞蒙古自治州",
+        "pid": "650000",
+        "id": 534
+      },
+      {
+        "areaCode": "652900",
+        "areaName": "阿克苏地区",
+        "pid": "650000",
+        "id": 535
+      },
+      {
+        "areaCode": "653000",
+        "areaName": "克孜勒苏柯尔克孜自治州",
+        "pid": "650000",
+        "id": 536
+      },
+      {
+        "areaCode": "653100",
+        "areaName": "喀什地区",
+        "pid": "650000",
+        "id": 537
+      },
+      {
+        "areaCode": "653200",
+        "areaName": "和田地区",
+        "pid": "650000",
+        "id": 538
+      },
+      {
+        "areaCode": "654000",
+        "areaName": "伊犁哈萨克自治州",
+        "pid": "650000",
+        "id": 539
+      },
+      {
+        "areaCode": "654200",
+        "areaName": "塔城地区",
+        "pid": "650000",
+        "id": 540
+      },
+      {
+        "areaCode": "654300",
+        "areaName": "阿勒泰地区",
+        "pid": "650000",
+        "id": 541
+      },
+      {
+        "areaCode": "659000",
+        "areaName": "省直辖行政单位",
+        "pid": "650000",
+        "id": 542
+      }
+    ],
+    "id": 29
+  },
+  {
+    "areaCode": "710000",
+    "areaName": "台湾省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "710100",
+        "areaName": "市辖区",
+        "pid": "710000",
+        "id": 551
+      }
+    ],
+    "id": 30
+  },
+  {
+    "areaCode": "810000",
+    "areaName": "香港特别行政区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "810100",
+        "areaName": "市辖区",
+        "pid": "810000",
+        "id": 553
+      }
+    ],
+    "id": 31
+  },
+  {
+    "areaCode": "820000",
+    "areaName": "澳门特别行政区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "820100",
+        "areaName": "市辖区",
+        "pid": "820000",
+        "id": 555
+      }
+    ],
+    "id": 32
+  },
+  {
+    "areaCode": "110000",
+    "areaName": "北京市",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "110100",
+        "areaName": "市辖区",
+        "pid": "110000",
+        "id": 548
+      },
+      {
+        "areaCode": "110200",
+        "areaName": "县",
+        "pid": "110000",
+        "id": 549
+      }
+    ],
+    "id": 543
+  },
+  {
+    "areaCode": "460000",
+    "areaName": "海南省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "460100",
+        "areaName": "海口市",
+        "pid": "460000",
+        "id": 386
+      },
+      {
+        "areaCode": "460200",
+        "areaName": "三亚市",
+        "pid": "460000",
+        "id": 387
+      },
+      {
+        "areaCode": "469000",
+        "areaName": "省直辖县级行政单位",
+        "pid": "460000",
+        "id": 388
+      }
+    ],
+    "id": 19
+  },
+  {
+    "areaCode": "450000",
+    "areaName": "广西壮族自治区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "450100",
+        "areaName": "南宁市",
+        "pid": "450000",
+        "id": 371
+      },
+      {
+        "areaCode": "450200",
+        "areaName": "柳州市",
+        "pid": "450000",
+        "id": 372
+      },
+      {
+        "areaCode": "450300",
+        "areaName": "桂林市",
+        "pid": "450000",
+        "id": 373
+      },
+      {
+        "areaCode": "450400",
+        "areaName": "梧州市",
+        "pid": "450000",
+        "id": 374
+      },
+      {
+        "areaCode": "450500",
+        "areaName": "北海市",
+        "pid": "450000",
+        "id": 375
+      },
+      {
+        "areaCode": "450600",
+        "areaName": "防城港市",
+        "pid": "450000",
+        "id": 376
+      },
+      {
+        "areaCode": "450700",
+        "areaName": "钦州市",
+        "pid": "450000",
+        "id": 377
+      },
+      {
+        "areaCode": "450800",
+        "areaName": "贵港市",
+        "pid": "450000",
+        "id": 378
+      },
+      {
+        "areaCode": "450900",
+        "areaName": "玉林市",
+        "pid": "450000",
+        "id": 379
+      },
+      {
+        "areaCode": "451000",
+        "areaName": "百色市",
+        "pid": "450000",
+        "id": 380
+      },
+      {
+        "areaCode": "451100",
+        "areaName": "贺州市",
+        "pid": "450000",
+        "id": 381
+      },
+      {
+        "areaCode": "451200",
+        "areaName": "河池市",
+        "pid": "450000",
+        "id": 382
+      },
+      {
+        "areaCode": "451300",
+        "areaName": "来宾市",
+        "pid": "450000",
+        "id": 383
+      },
+      {
+        "areaCode": "451400",
+        "areaName": "崇左市",
+        "pid": "450000",
+        "id": 384
+      }
+    ],
+    "id": 18
+  },
+  {
+    "areaCode": "140000",
+    "areaName": "山西省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "140100",
+        "areaName": "太原市",
+        "pid": "140000",
+        "id": 79
+      },
+      {
+        "areaCode": "140200",
+        "areaName": "大同市",
+        "pid": "140000",
+        "id": 80
+      },
+      {
+        "areaCode": "140300",
+        "areaName": "阳泉市",
+        "pid": "140000",
+        "id": 81
+      },
+      {
+        "areaCode": "140400",
+        "areaName": "长治市",
+        "pid": "140000",
+        "id": 82
+      },
+      {
+        "areaCode": "140500",
+        "areaName": "晋城市",
+        "pid": "140000",
+        "id": 83
+      },
+      {
+        "areaCode": "140600",
+        "areaName": "朔州市",
+        "pid": "140000",
+        "id": 84
+      },
+      {
+        "areaCode": "140700",
+        "areaName": "晋中市",
+        "pid": "140000",
+        "id": 85
+      },
+      {
+        "areaCode": "140800",
+        "areaName": "运城市",
+        "pid": "140000",
+        "id": 86
+      },
+      {
+        "areaCode": "140900",
+        "areaName": "忻州市",
+        "pid": "140000",
+        "id": 87
+      },
+      {
+        "areaCode": "141000",
+        "areaName": "临汾市",
+        "pid": "140000",
+        "id": 88
+      },
+      {
+        "areaCode": "141100",
+        "areaName": "吕梁市",
+        "pid": "140000",
+        "id": 89
+      }
+    ],
+    "id": 2
+  },
+  {
+    "areaCode": "150000",
+    "areaName": "内蒙古自治区",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "150100",
+        "areaName": "呼和浩特市",
+        "pid": "150000",
+        "id": 94
+      },
+      {
+        "areaCode": "150200",
+        "areaName": "包头市",
+        "pid": "150000",
+        "id": 95
+      },
+      {
+        "areaCode": "150300",
+        "areaName": "乌海市",
+        "pid": "150000",
+        "id": 96
+      },
+      {
+        "areaCode": "150400",
+        "areaName": "赤峰市",
+        "pid": "150000",
+        "id": 97
+      },
+      {
+        "areaCode": "150500",
+        "areaName": "通辽市",
+        "pid": "150000",
+        "id": 98
+      },
+      {
+        "areaCode": "150600",
+        "areaName": "鄂尔多斯市",
+        "pid": "150000",
+        "id": 99
+      },
+      {
+        "areaCode": "150700",
+        "areaName": "呼伦贝尔市",
+        "pid": "150000",
+        "id": 100
+      },
+      {
+        "areaCode": "150800",
+        "areaName": "巴彦淖尔市",
+        "pid": "150000",
+        "id": 101
+      },
+      {
+        "areaCode": "150900",
+        "areaName": "乌兰察布市",
+        "pid": "150000",
+        "id": 102
+      },
+      {
+        "areaCode": "152200",
+        "areaName": "兴安盟",
+        "pid": "150000",
+        "id": 103
+      },
+      {
+        "areaCode": "152500",
+        "areaName": "锡林郭勒盟",
+        "pid": "150000",
+        "id": 104
+      },
+      {
+        "areaCode": "152900",
+        "areaName": "阿拉善盟",
+        "pid": "150000",
+        "id": 105
+      }
+    ],
+    "id": 3
+  },
+  {
+    "areaCode": "210000",
+    "areaName": "辽宁省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "210100",
+        "areaName": "沈阳市",
+        "pid": "210000",
+        "id": 109
+      },
+      {
+        "areaCode": "210200",
+        "areaName": "大连市",
+        "pid": "210000",
+        "id": 110
+      },
+      {
+        "areaCode": "210300",
+        "areaName": "鞍山市",
+        "pid": "210000",
+        "id": 111
+      },
+      {
+        "areaCode": "210400",
+        "areaName": "抚顺市",
+        "pid": "210000",
+        "id": 112
+      },
+      {
+        "areaCode": "210500",
+        "areaName": "本溪市",
+        "pid": "210000",
+        "id": 113
+      },
+      {
+        "areaCode": "210600",
+        "areaName": "丹东市",
+        "pid": "210000",
+        "id": 114
+      },
+      {
+        "areaCode": "210700",
+        "areaName": "锦州市",
+        "pid": "210000",
+        "id": 115
+      },
+      {
+        "areaCode": "210800",
+        "areaName": "营口市",
+        "pid": "210000",
+        "id": 116
+      },
+      {
+        "areaCode": "210900",
+        "areaName": "阜新市",
+        "pid": "210000",
+        "id": 117
+      },
+      {
+        "areaCode": "211000",
+        "areaName": "辽阳市",
+        "pid": "210000",
+        "id": 118
+      },
+      {
+        "areaCode": "211100",
+        "areaName": "盘锦市",
+        "pid": "210000",
+        "id": 119
+      },
+      {
+        "areaCode": "211200",
+        "areaName": "铁岭市",
+        "pid": "210000",
+        "id": 120
+      },
+      {
+        "areaCode": "211300",
+        "areaName": "朝阳市",
+        "pid": "210000",
+        "id": 121
+      },
+      {
+        "areaCode": "211400",
+        "areaName": "葫芦岛市",
+        "pid": "210000",
+        "id": 122
+      }
+    ],
+    "id": 4
+  },
+  {
+    "areaCode": "220000",
+    "areaName": "吉林省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "220100",
+        "areaName": "长春市",
+        "pid": "220000",
+        "id": 124
+      },
+      {
+        "areaCode": "220200",
+        "areaName": "吉林市",
+        "pid": "220000",
+        "id": 125
+      },
+      {
+        "areaCode": "220300",
+        "areaName": "四平市",
+        "pid": "220000",
+        "id": 126
+      },
+      {
+        "areaCode": "220400",
+        "areaName": "辽源市",
+        "pid": "220000",
+        "id": 127
+      },
+      {
+        "areaCode": "220500",
+        "areaName": "通化市",
+        "pid": "220000",
+        "id": 128
+      },
+      {
+        "areaCode": "220600",
+        "areaName": "白山市",
+        "pid": "220000",
+        "id": 129
+      },
+      {
+        "areaCode": "220700",
+        "areaName": "松原市",
+        "pid": "220000",
+        "id": 130
+      },
+      {
+        "areaCode": "220800",
+        "areaName": "白城市",
+        "pid": "220000",
+        "id": 131
+      },
+      {
+        "areaCode": "222400",
+        "areaName": "延边朝鲜族自治州",
+        "pid": "220000",
+        "id": 132
+      }
+    ],
+    "id": 5
+  },
+  {
+    "areaCode": "230000",
+    "areaName": "黑龙江省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "230100",
+        "areaName": "哈尔滨市",
+        "pid": "230000",
+        "id": 139
+      },
+      {
+        "areaCode": "230200",
+        "areaName": "齐齐哈尔市",
+        "pid": "230000",
+        "id": 140
+      },
+      {
+        "areaCode": "230300",
+        "areaName": "鸡西市",
+        "pid": "230000",
+        "id": 141
+      },
+      {
+        "areaCode": "230400",
+        "areaName": "鹤岗市",
+        "pid": "230000",
+        "id": 142
+      },
+      {
+        "areaCode": "230500",
+        "areaName": "双鸭山市",
+        "pid": "230000",
+        "id": 143
+      },
+      {
+        "areaCode": "230600",
+        "areaName": "大庆市",
+        "pid": "230000",
+        "id": 144
+      },
+      {
+        "areaCode": "230700",
+        "areaName": "伊春市",
+        "pid": "230000",
+        "id": 145
+      },
+      {
+        "areaCode": "230800",
+        "areaName": "佳木斯市",
+        "pid": "230000",
+        "id": 146
+      },
+      {
+        "areaCode": "230900",
+        "areaName": "七台河市",
+        "pid": "230000",
+        "id": 147
+      },
+      {
+        "areaCode": "231000",
+        "areaName": "牡丹江市",
+        "pid": "230000",
+        "id": 148
+      },
+      {
+        "areaCode": "231100",
+        "areaName": "黑河市",
+        "pid": "230000",
+        "id": 149
+      },
+      {
+        "areaCode": "231200",
+        "areaName": "绥化市",
+        "pid": "230000",
+        "id": 150
+      },
+      {
+        "areaCode": "232700",
+        "areaName": "大兴安岭地区",
+        "pid": "230000",
+        "id": 151
+      }
+    ],
+    "id": 6
+  },
+  {
+    "areaCode": "330000",
+    "areaName": "浙江省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "330100",
+        "areaName": "杭州市",
+        "pid": "330000",
+        "id": 172
+      },
+      {
+        "areaCode": "330200",
+        "areaName": "宁波市",
+        "pid": "330000",
+        "id": 173
+      },
+      {
+        "areaCode": "330300",
+        "areaName": "温州市",
+        "pid": "330000",
+        "id": 174
+      },
+      {
+        "areaCode": "330400",
+        "areaName": "嘉兴市",
+        "pid": "330000",
+        "id": 175
+      },
+      {
+        "areaCode": "330500",
+        "areaName": "湖州市",
+        "pid": "330000",
+        "id": 176
+      },
+      {
+        "areaCode": "330600",
+        "areaName": "绍兴市",
+        "pid": "330000",
+        "id": 177
+      },
+      {
+        "areaCode": "330700",
+        "areaName": "金华市",
+        "pid": "330000",
+        "id": 178
+      },
+      {
+        "areaCode": "330800",
+        "areaName": "衢州市",
+        "pid": "330000",
+        "id": 179
+      },
+      {
+        "areaCode": "330900",
+        "areaName": "舟山市",
+        "pid": "330000",
+        "id": 180
+      },
+      {
+        "areaCode": "331000",
+        "areaName": "台州市",
+        "pid": "330000",
+        "id": 181
+      },
+      {
+        "areaCode": "331100",
+        "areaName": "丽水市",
+        "pid": "330000",
+        "id": 182
+      }
+    ],
+    "id": 9
+  },
+  {
+    "areaCode": "340000",
+    "areaName": "安徽省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "340100",
+        "areaName": "合肥市",
+        "pid": "340000",
+        "id": 187
+      },
+      {
+        "areaCode": "340200",
+        "areaName": "芜湖市",
+        "pid": "340000",
+        "id": 188
+      },
+      {
+        "areaCode": "340300",
+        "areaName": "蚌埠市",
+        "pid": "340000",
+        "id": 189
+      },
+      {
+        "areaCode": "340400",
+        "areaName": "淮南市",
+        "pid": "340000",
+        "id": 190
+      },
+      {
+        "areaCode": "340500",
+        "areaName": "马鞍山市",
+        "pid": "340000",
+        "id": 191
+      },
+      {
+        "areaCode": "340600",
+        "areaName": "淮北市",
+        "pid": "340000",
+        "id": 192
+      },
+      {
+        "areaCode": "340700",
+        "areaName": "铜陵市",
+        "pid": "340000",
+        "id": 193
+      },
+      {
+        "areaCode": "340800",
+        "areaName": "安庆市",
+        "pid": "340000",
+        "id": 194
+      },
+      {
+        "areaCode": "341000",
+        "areaName": "黄山市",
+        "pid": "340000",
+        "id": 195
+      },
+      {
+        "areaCode": "341100",
+        "areaName": "滁州市",
+        "pid": "340000",
+        "id": 196
+      },
+      {
+        "areaCode": "341200",
+        "areaName": "阜阳市",
+        "pid": "340000",
+        "id": 197
+      },
+      {
+        "areaCode": "341300",
+        "areaName": "宿州市",
+        "pid": "340000",
+        "id": 198
+      },
+      {
+        "areaCode": "341400",
+        "areaName": "巢湖市",
+        "pid": "340000",
+        "id": 199
+      },
+      {
+        "areaCode": "341500",
+        "areaName": "六安市",
+        "pid": "340000",
+        "id": 200
+      },
+      {
+        "areaCode": "341600",
+        "areaName": "亳州市",
+        "pid": "340000",
+        "id": 201
+      },
+      {
+        "areaCode": "341700",
+        "areaName": "池州市",
+        "pid": "340000",
+        "id": 202
+      },
+      {
+        "areaCode": "341800",
+        "areaName": "宣城市",
+        "pid": "340000",
+        "id": 203
+      }
+    ],
+    "id": 10
+  },
+  {
+    "areaCode": "350000",
+    "areaName": "福建省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "350100",
+        "areaName": "福州市",
+        "pid": "350000",
+        "id": 218
+      },
+      {
+        "areaCode": "350200",
+        "areaName": "厦门市",
+        "pid": "350000",
+        "id": 219
+      },
+      {
+        "areaCode": "350300",
+        "areaName": "莆田市",
+        "pid": "350000",
+        "id": 220
+      },
+      {
+        "areaCode": "350400",
+        "areaName": "三明市",
+        "pid": "350000",
+        "id": 221
+      },
+      {
+        "areaCode": "350500",
+        "areaName": "泉州市",
+        "pid": "350000",
+        "id": 222
+      },
+      {
+        "areaCode": "350600",
+        "areaName": "漳州市",
+        "pid": "350000",
+        "id": 223
+      },
+      {
+        "areaCode": "350700",
+        "areaName": "南平市",
+        "pid": "350000",
+        "id": 224
+      },
+      {
+        "areaCode": "350800",
+        "areaName": "龙岩市",
+        "pid": "350000",
+        "id": 225
+      },
+      {
+        "areaCode": "350900",
+        "areaName": "宁德市",
+        "pid": "350000",
+        "id": 226
+      }
+    ],
+    "id": 11
+  },
+  {
+    "areaCode": "360000",
+    "areaName": "江西省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "360100",
+        "areaName": "南昌市",
+        "pid": "360000",
+        "id": 233
+      },
+      {
+        "areaCode": "360200",
+        "areaName": "景德镇市",
+        "pid": "360000",
+        "id": 234
+      },
+      {
+        "areaCode": "360300",
+        "areaName": "萍乡市",
+        "pid": "360000",
+        "id": 235
+      },
+      {
+        "areaCode": "360400",
+        "areaName": "九江市",
+        "pid": "360000",
+        "id": 236
+      },
+      {
+        "areaCode": "360500",
+        "areaName": "新余市",
+        "pid": "360000",
+        "id": 237
+      },
+      {
+        "areaCode": "360600",
+        "areaName": "鹰潭市",
+        "pid": "360000",
+        "id": 238
+      },
+      {
+        "areaCode": "360700",
+        "areaName": "赣州市",
+        "pid": "360000",
+        "id": 239
+      },
+      {
+        "areaCode": "360800",
+        "areaName": "吉安市",
+        "pid": "360000",
+        "id": 240
+      },
+      {
+        "areaCode": "360900",
+        "areaName": "宜春市",
+        "pid": "360000",
+        "id": 241
+      },
+      {
+        "areaCode": "361000",
+        "areaName": "抚州市",
+        "pid": "360000",
+        "id": 242
+      },
+      {
+        "areaCode": "361100",
+        "areaName": "上饶市",
+        "pid": "360000",
+        "id": 243
+      }
+    ],
+    "id": 12
+  },
+  {
+    "areaCode": "370000",
+    "areaName": "山东省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "370100",
+        "areaName": "济南市",
+        "pid": "370000",
+        "id": 248
+      },
+      {
+        "areaCode": "370200",
+        "areaName": "青岛市",
+        "pid": "370000",
+        "id": 249
+      },
+      {
+        "areaCode": "370300",
+        "areaName": "淄博市",
+        "pid": "370000",
+        "id": 250
+      },
+      {
+        "areaCode": "370400",
+        "areaName": "枣庄市",
+        "pid": "370000",
+        "id": 251
+      },
+      {
+        "areaCode": "370500",
+        "areaName": "东营市",
+        "pid": "370000",
+        "id": 252
+      },
+      {
+        "areaCode": "370600",
+        "areaName": "烟台市",
+        "pid": "370000",
+        "id": 253
+      },
+      {
+        "areaCode": "370700",
+        "areaName": "潍坊市",
+        "pid": "370000",
+        "id": 254
+      },
+      {
+        "areaCode": "370800",
+        "areaName": "济宁市",
+        "pid": "370000",
+        "id": 255
+      },
+      {
+        "areaCode": "370900",
+        "areaName": "泰安市",
+        "pid": "370000",
+        "id": 256
+      },
+      {
+        "areaCode": "371000",
+        "areaName": "威海市",
+        "pid": "370000",
+        "id": 257
+      },
+      {
+        "areaCode": "371100",
+        "areaName": "日照市",
+        "pid": "370000",
+        "id": 258
+      },
+      {
+        "areaCode": "371200",
+        "areaName": "莱芜市",
+        "pid": "370000",
+        "id": 259
+      },
+      {
+        "areaCode": "371300",
+        "areaName": "临沂市",
+        "pid": "370000",
+        "id": 260
+      },
+      {
+        "areaCode": "371400",
+        "areaName": "德州市",
+        "pid": "370000",
+        "id": 261
+      },
+      {
+        "areaCode": "371500",
+        "areaName": "聊城市",
+        "pid": "370000",
+        "id": 262
+      },
+      {
+        "areaCode": "371600",
+        "areaName": "滨州市",
+        "pid": "370000",
+        "id": 263
+      },
+      {
+        "areaCode": "371700",
+        "areaName": "荷泽市",
+        "pid": "370000",
+        "id": 264
+      }
+    ],
+    "id": 13
+  },
+  {
+    "areaCode": "410000",
+    "areaName": "河南省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "410100",
+        "areaName": "郑州市",
+        "pid": "410000",
+        "id": 279
+      },
+      {
+        "areaCode": "410200",
+        "areaName": "开封市",
+        "pid": "410000",
+        "id": 280
+      },
+      {
+        "areaCode": "410300",
+        "areaName": "洛阳市",
+        "pid": "410000",
+        "id": 281
+      },
+      {
+        "areaCode": "410400",
+        "areaName": "平顶山市",
+        "pid": "410000",
+        "id": 282
+      },
+      {
+        "areaCode": "410500",
+        "areaName": "安阳市",
+        "pid": "410000",
+        "id": 283
+      },
+      {
+        "areaCode": "410600",
+        "areaName": "鹤壁市",
+        "pid": "410000",
+        "id": 284
+      },
+      {
+        "areaCode": "410700",
+        "areaName": "新乡市",
+        "pid": "410000",
+        "id": 285
+      },
+      {
+        "areaCode": "410800",
+        "areaName": "焦作市",
+        "pid": "410000",
+        "id": 286
+      },
+      {
+        "areaCode": "410900",
+        "areaName": "濮阳市",
+        "pid": "410000",
+        "id": 287
+      },
+      {
+        "areaCode": "411000",
+        "areaName": "许昌市",
+        "pid": "410000",
+        "id": 288
+      },
+      {
+        "areaCode": "411100",
+        "areaName": "漯河市",
+        "pid": "410000",
+        "id": 289
+      },
+      {
+        "areaCode": "411200",
+        "areaName": "三门峡市",
+        "pid": "410000",
+        "id": 290
+      },
+      {
+        "areaCode": "411300",
+        "areaName": "南阳市",
+        "pid": "410000",
+        "id": 291
+      },
+      {
+        "areaCode": "411400",
+        "areaName": "商丘市",
+        "pid": "410000",
+        "id": 292
+      },
+      {
+        "areaCode": "411500",
+        "areaName": "信阳市",
+        "pid": "410000",
+        "id": 293
+      },
+      {
+        "areaCode": "411600",
+        "areaName": "周口市",
+        "pid": "410000",
+        "id": 294
+      },
+      {
+        "areaCode": "411700",
+        "areaName": "驻马店市",
+        "pid": "410000",
+        "id": 295
+      }
+    ],
+    "id": 14
+  },
+  {
+    "areaCode": "420000",
+    "areaName": "湖北省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "420100",
+        "areaName": "武汉市",
+        "pid": "420000",
+        "id": 310
+      },
+      {
+        "areaCode": "420200",
+        "areaName": "黄石市",
+        "pid": "420000",
+        "id": 311
+      },
+      {
+        "areaCode": "420300",
+        "areaName": "十堰市",
+        "pid": "420000",
+        "id": 312
+      },
+      {
+        "areaCode": "420500",
+        "areaName": "宜昌市",
+        "pid": "420000",
+        "id": 313
+      },
+      {
+        "areaCode": "420600",
+        "areaName": "襄阳市",
+        "pid": "420000",
+        "id": 314
+      },
+      {
+        "areaCode": "420700",
+        "areaName": "鄂州市",
+        "pid": "420000",
+        "id": 315
+      },
+      {
+        "areaCode": "420800",
+        "areaName": "荆门市",
+        "pid": "420000",
+        "id": 316
+      },
+      {
+        "areaCode": "420900",
+        "areaName": "孝感市",
+        "pid": "420000",
+        "id": 317
+      },
+      {
+        "areaCode": "421000",
+        "areaName": "荆州市",
+        "pid": "420000",
+        "id": 318
+      },
+      {
+        "areaCode": "421100",
+        "areaName": "黄冈市",
+        "pid": "420000",
+        "id": 319
+      },
+      {
+        "areaCode": "421200",
+        "areaName": "咸宁市",
+        "pid": "420000",
+        "id": 320
+      },
+      {
+        "areaCode": "421300",
+        "areaName": "随州市",
+        "pid": "420000",
+        "id": 321
+      },
+      {
+        "areaCode": "422800",
+        "areaName": "恩施土家族苗族自治州",
+        "pid": "420000",
+        "id": 322
+      },
+      {
+        "areaCode": "429000",
+        "areaName": "省直辖行政单位",
+        "pid": "420000",
+        "id": 323
+      }
+    ],
+    "id": 15
+  },
+  {
+    "areaCode": "430000",
+    "areaName": "湖南省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "430100",
+        "areaName": "长沙市",
+        "pid": "430000",
+        "id": 325
+      },
+      {
+        "areaCode": "430200",
+        "areaName": "株洲市",
+        "pid": "430000",
+        "id": 326
+      },
+      {
+        "areaCode": "430300",
+        "areaName": "湘潭市",
+        "pid": "430000",
+        "id": 327
+      },
+      {
+        "areaCode": "430400",
+        "areaName": "衡阳市",
+        "pid": "430000",
+        "id": 328
+      },
+      {
+        "areaCode": "430500",
+        "areaName": "邵阳市",
+        "pid": "430000",
+        "id": 329
+      },
+      {
+        "areaCode": "430600",
+        "areaName": "岳阳市",
+        "pid": "430000",
+        "id": 330
+      },
+      {
+        "areaCode": "430700",
+        "areaName": "常德市",
+        "pid": "430000",
+        "id": 331
+      },
+      {
+        "areaCode": "430800",
+        "areaName": "张家界市",
+        "pid": "430000",
+        "id": 332
+      },
+      {
+        "areaCode": "430900",
+        "areaName": "益阳市",
+        "pid": "430000",
+        "id": 333
+      },
+      {
+        "areaCode": "431000",
+        "areaName": "郴州市",
+        "pid": "430000",
+        "id": 334
+      },
+      {
+        "areaCode": "431100",
+        "areaName": "永州市",
+        "pid": "430000",
+        "id": 335
+      },
+      {
+        "areaCode": "431200",
+        "areaName": "怀化市",
+        "pid": "430000",
+        "id": 336
+      },
+      {
+        "areaCode": "431300",
+        "areaName": "娄底市",
+        "pid": "430000",
+        "id": 337
+      },
+      {
+        "areaCode": "433100",
+        "areaName": "湘西土家族苗族自治州",
+        "pid": "430000",
+        "id": 338
+      }
+    ],
+    "id": 16
+  },
+  {
+    "areaCode": "440000",
+    "areaName": "广东省",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "440100",
+        "areaName": "广州市",
+        "pid": "440000",
+        "id": 340
+      },
+      {
+        "areaCode": "440200",
+        "areaName": "韶关市",
+        "pid": "440000",
+        "id": 341
+      },
+      {
+        "areaCode": "440300",
+        "areaName": "深圳市",
+        "pid": "440000",
+        "id": 342
+      },
+      {
+        "areaCode": "440400",
+        "areaName": "珠海市",
+        "pid": "440000",
+        "id": 343
+      },
+      {
+        "areaCode": "440500",
+        "areaName": "汕头市",
+        "pid": "440000",
+        "id": 344
+      },
+      {
+        "areaCode": "440600",
+        "areaName": "佛山市",
+        "pid": "440000",
+        "id": 345
+      },
+      {
+        "areaCode": "440700",
+        "areaName": "江门市",
+        "pid": "440000",
+        "id": 346
+      },
+      {
+        "areaCode": "440800",
+        "areaName": "湛江市",
+        "pid": "440000",
+        "id": 347
+      },
+      {
+        "areaCode": "440900",
+        "areaName": "茂名市",
+        "pid": "440000",
+        "id": 348
+      },
+      {
+        "areaCode": "441300",
+        "areaName": "惠州市",
+        "pid": "440000",
+        "id": 349
+      },
+      {
+        "areaCode": "441400",
+        "areaName": "梅州市",
+        "pid": "440000",
+        "id": 350
+      },
+      {
+        "areaCode": "441500",
+        "areaName": "汕尾市",
+        "pid": "440000",
+        "id": 351
+      },
+      {
+        "areaCode": "441600",
+        "areaName": "河源市",
+        "pid": "440000",
+        "id": 352
+      },
+      {
+        "areaCode": "441700",
+        "areaName": "阳江市",
+        "pid": "440000",
+        "id": 353
+      },
+      {
+        "areaCode": "441800",
+        "areaName": "清远市",
+        "pid": "440000",
+        "id": 354
+      },
+      {
+        "areaCode": "441900",
+        "areaName": "东莞市",
+        "pid": "440000",
+        "id": 355
+      },
+      {
+        "areaCode": "442000",
+        "areaName": "中山市",
+        "pid": "440000",
+        "id": 356
+      },
+      {
+        "areaCode": "442800",
+        "areaName": "肇庆市",
+        "pid": "440000",
+        "id": 357
+      },
+      {
+        "areaCode": "445100",
+        "areaName": "潮州市",
+        "pid": "440000",
+        "id": 358
+      },
+      {
+        "areaCode": "445200",
+        "areaName": "揭阳市",
+        "pid": "440000",
+        "id": 359
+      },
+      {
+        "areaCode": "445300",
+        "areaName": "云浮市",
+        "pid": "440000",
+        "id": 360
+      }
+    ],
+    "id": 17
+  },
+  {
+    "areaCode": "120000",
+    "areaName": "天津市",
+    "pid": "000000",
+    "zones": [
+      {
+        "areaCode": "120100",
+        "areaName": "市辖区",
+        "pid": "120000",
+        "id": 545
+      },
+      {
+        "areaCode": "120200",
+        "areaName": "县",
+        "pid": "120000",
+        "id": 546
+      }
+    ],
+    "id": 544
+  }
+]

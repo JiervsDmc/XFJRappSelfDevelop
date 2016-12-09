@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:background="@drawable/loginbg"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="登录"
+                android:textSize="@dimen/title_font"
+                android:textColor="@color/app_black"
+                android:layout_marginTop="20dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/logo"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/id_icon" />
+
+            <com.huaxia.finance.consumer.view.ClearEditText
+                android:id="@+id/et_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@null"
+                android:hint="请输入您的手机号"
+                android:singleLine="true"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColorHint="@color/app_hint_text_color"
+                android:textSize="@dimen/submit_font" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/app_view_color" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/pw_icon"/>
+
+            <com.huaxia.finance.consumer.view.ClearEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@null"
+                android:hint="请输入您的密码"
+                android:password="true"
+                android:singleLine="true"
+                android:maxLength="12"
+                android:textColorHint="@color/app_hint_text_color"
+                android:textSize="@dimen/submit_font" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/app_view_color" />
+        <TextView
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/submit_font"
+            android:background="@drawable/textview_click_selector"
+            android:text="登录"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true"
+                android:text="忘记密码"
+                android:textColor="@color/app_blue_color"
+                android:textSize="@dimen/item_name"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:background="@color/app_background_below"
+    android:gravity="center"
+    android:layout_height="46dp">
+    <TextView
+        android:id="@+id/tv_to_regist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="没有账号？我要注册"
+        android:textColor="@color/app_blue_color"
+/>
+</LinearLayout>
+
+</RelativeLayout>

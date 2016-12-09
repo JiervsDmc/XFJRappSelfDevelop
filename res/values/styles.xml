@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- don't by version, consider the following-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+         <!--Customize your theme here. -->
+        <item name="colorPrimary">@color/app_theme_color</item>
+        <item name="colorPrimaryDark">#ff000000</item>
+        <item name="colorAccent">@color/transparent_background_light</item>
+    </style>
+    <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light.NoActionBar">-->
+    <!--</style>-->
+    <style name="AppBaseTheme" parent="android:Theme.Light"/>
+    <!-- Originally the theme：AppThemeBase now:AppTheme-->
+    <style name="AppThemeBase" parent="AppBaseTheme">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Dialog_Transparent">
+        <item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Dialot_CitySelect">
+        <item name="android:windowBackground">@color/transparent_background_light</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+    <style name="img_pop_animstyle">
+        <item name="android:windowEnterAnimation">@anim/pop_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_out_anim</item>
+    </style>
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

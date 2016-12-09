@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/app_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:src="@drawable/tips_icon" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/text_black_color"
+                    android:text="提供真实的资料信息才能通过审核" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="手机号"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/item_name" />
+
+                <TextView
+                    android:id="@+id/certification_mobil"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="43dp"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:text=""
+                    android:singleLine="true"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="服务密码"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:inputType="textPassword"
+                    android:id="@+id/certification_psw"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="手机查询密码"
+                    android:singleLine="true"
+                    android:textColor="@color/app_black"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/certification_now"
+                android:layout_width="330dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textview_click_selector"
+                android:text="立即认证"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/submit_font" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/text_contact_color"
+                android:text="查询密码仅作实名验证以提高信用等级和借款额度"
+                android:textSize="@dimen/item_name" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="#AAAAAA" />
+
+            <TextView
+                android:id="@+id/method_get_SMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left1"
+                android:layout_marginTop="10dp"
+                android:text="密码获取方式"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/item_name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left1"
+                android:textSize="@dimen/item_name"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/text_black_color"
+                android:text="@string/SMS_get_methods" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

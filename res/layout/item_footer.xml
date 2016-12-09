@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+     <Button
+        android:id="@+id/upload_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+       android:background="@drawable/button_yuanjiao"
+        android:text="下一步"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+       />
+
+</LinearLayout>

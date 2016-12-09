@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="42dp"
+    android:background="@color/whitesmoke"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+    <LinearLayout
+        android:id="@+id/order_yes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <ListView
+            android:id="@+id/lv_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:divider="@null"></ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/order_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="133dp"
+                android:layout_height="133dp"
+                android:background="@drawable/noorder" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="暂无订单"
+            android:textColor="@color/text_black_color"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:id="@+id/to_subject"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/textview_click_selector"
+            android:gravity="center"
+            android:text="去申请"
+            android:textColor="@color/app_white"
+            android:textSize="@dimen/submit_font" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/order_no_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="133dp"
+                android:layout_height="133dp"
+                android:background="@drawable/pic" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="页面加载失败"
+            android:textColor="@color/text_black_color"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:id="@+id/to_reload"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/corners_white_bg"
+            android:gravity="center"
+            android:text="重新加载"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/submit_font" />
+    </LinearLayout>
+</LinearLayout>

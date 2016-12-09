@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitesmoke"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/title_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_commodity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="商品信息"
+                android:textSize="@dimen/item_name"
+                android:textColor="@color/app_pass_color"/>
+            <LinearLayout
+                android:id="@+id/merchant_name"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="商户名称"
+                        android:textSize="@dimen/item_name"
+                        android:textColor="@color/app_pass_color"
+                        />
+
+                    <EditText
+                        android:id="@+id/tv_merchant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="30dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical|left"
+                        android:hint="请选择"
+                        android:background="@null"
+                        android:textColorHint="@color/app_hint_text_color"
+                        android:textSize="@dimen/item_name" />
+
+                </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="15dp"
+                        android:src="@drawable/jiantou_right"
+                       />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:id="@+id/merchant_classification"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="商品分类"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color" />
+
+                <EditText
+                    android:id="@+id/tv_merchant_classification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:background="@null"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"  />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/jiantou_right"
+                    android:layout_marginRight="15dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="商品名称"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color" />
+
+                <com.huaxia.finance.consumer.view.ClearEditText
+                    android:id="@+id/et_commodity_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入购买的商品名称"
+                    android:background="@null"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="商品价格"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <com.huaxia.finance.consumer.view.ClearEditText
+                    android:id="@+id/et_commodity_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入商品金额"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="元"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="分期金额"
+                android:textColor="@color/app_pass_color"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="@dimen/item_name"
+
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="首付"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <com.huaxia.finance.consumer.view.ClearEditText
+                    android:id="@+id/et_shoufu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:hint="请输入首付金额"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="元"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="分期金额"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <EditText
+                    android:id="@+id/tv_installment_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:background="@null"
+                    android:hint=""
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="元"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:id="@+id/stage_number"
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="分期期数"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color" />
+
+                <EditText
+                    android:id="@+id/tv_stage_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:background="@null"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/jiantou_right"
+                    android:layout_marginRight="15dp"/>
+            </LinearLayout>
+           <!-- <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="月手续费率"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <EditText
+                    android:id="@+id/monthly_fee_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint=""
+                    android:background="@null"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="%"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(已包含一次性服务费)"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/app_hint_text_color"
+                    />
+
+            </LinearLayout>-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="每期应还"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <EditText
+                    android:id="@+id/each_should_also"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint=""
+                    android:background="@null"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"  />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:text="元"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+                <TextView
+                    android:id="@+id/tv_trial"
+                    android:layout_width="45dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/corners_blue_bg"
+                   android:gravity="center"
+                    android:text="试算"
+                    android:textSize="@dimen/text_font"
+                    android:textColor="@color/app_blue_color"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="一次性服务费"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <EditText
+                    android:id="@+id/one_time_interest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical|left"
+                    android:hint=""
+                    android:background="@null"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:text="元"
+                    android:textColor="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="审批通过后T+1日从绑定银行卡中扣取"
+                android:textColor="@color/app_red"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/item_name"
+                />
+            <TextView
+                android:id="@+id/tv_salesperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="销售人员联系方式"
+                android:textSize="@dimen/item_name"
+                android:textColor="@color/app_pass_color"/>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@color/app_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="销售员"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color" />
+
+                <com.huaxia.finance.consumer.view.ClearEditText
+                    android:id="@+id/et_salesperson_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:hint=""
+                    android:maxLength="30"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="15dp"
+                android:background="@color/app_view_color" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@color/app_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="销售电话"
+                    android:textSize="@dimen/item_name"
+                    android:textColor="@color/app_pass_color"/>
+
+                <com.huaxia.finance.consumer.view.ClearEditText
+                    android:id="@+id/et_salesperson_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:hint=""
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_hint_text_color"
+                    android:textSize="@dimen/item_name"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/order_next"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/submit_font"
+                android:background="@drawable/textview_click_selector"
+                android:text="下一步"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

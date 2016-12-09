@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="工作单位"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:id="@+id/enterprise_workname"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入您的单位名称"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="单位地址"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <TextView
+                    android:id="@+id/select_enterprise_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+
+                <ImageView
+                    android:id="@+id/image0"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:src="@drawable/jiantou_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:minWidth="60dp"
+                    android:text=""
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/enterprise_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:layout_marginRight="15dp"
+                    android:background="#00000000"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入单位地址的详细街道地址"
+                    android:maxEms="20"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="单位电话"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:id="@+id/enterprise_quhao"
+                    android:layout_width="50dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="区号"
+                    android:inputType="phone"
+                    android:maxLength="3"
+                    android:minWidth="50dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color2" />
+
+                <EditText
+                    android:id="@+id/enterprise_gudinghaoma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="固定电话号码"
+                    android:inputType="phone"
+                    android:maxLength="8"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="每月收入"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:id="@+id/enterprise_month_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left2"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入每月税前收入"
+                    android:maxLength="8"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="学历"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <TextView
+                    android:id="@+id/enterprise_education"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/margin_left3"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:src="@drawable/jiantou_right" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/enterprise_workInfo_submit"
+                android:layout_width="330dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textview_click_selector"
+                android:text="提交"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/submit_font" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

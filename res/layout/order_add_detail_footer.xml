@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+          android:layout_marginBottom="60dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看"
+            android:textSize="@dimen/pass_font"
+            android:textColor="@color/app_pass_color"/>
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《借款合同》、"
+            android:layout_marginLeft="0dp"
+            android:textSize="@dimen/pass_font"
+            android:textColor="@color/app_blue_color"/>
+          <TextView
+              android:id="@+id/tv_protocol1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="《咨询服务协议》"
+              android:textSize="@dimen/pass_font"
+              android:textColor="@color/app_blue_color"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="和"
+            android:layout_marginLeft="5dp"
+            android:textSize="@dimen/pass_font"
+            android:textColor="@color/app_pass_color"/>
+          <TextView
+              android:id="@+id/tv_protocol3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="《补充协议》"
+              android:layout_marginLeft="5dp"
+              android:textSize="@dimen/pass_font"
+              android:textColor="@color/app_blue_color"/>
+
+    </LinearLayout>
+
+</LinearLayout>

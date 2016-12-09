@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:alpha="0.9">
+    
+    <ImageView
+        android:id="@+id/iv_cert_pic"
+        android:layout_width="260dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_cert_pic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+        
+        <RelativeLayout
+            android:id="@+id/rl_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp">
+
+            <ImageView
+                android:id="@+id/iv_change"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/change_cert"/>
+            <TextView
+                android:id="@+id/tv_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/title_font"
+                android:layout_below="@+id/iv_change"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/changeblue"
+                android:text="更换"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="45dp"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/delete_cert"/>
+            <TextView
+                android:id="@+id/tv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/title_font"
+                android:layout_below="@+id/iv_delete"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/zired"
+                android:text="删除"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

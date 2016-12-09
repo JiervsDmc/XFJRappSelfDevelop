@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="20dp"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="房产信息"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:id="@+id/freelance_house_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="60dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name"
+                    />
+
+                <ImageView
+                    android:id="@+id/image0"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/jiantou_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="个人/家庭收入"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <EditText
+                    android:id="@+id/freelance_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入每月税前收入"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left1"
+                    android:text="学历"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/item_name" />
+
+                <TextView
+                    android:id="@+id/freelance_education"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="88dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:gravity="center_vertical|left"
+                    android:hint="请选择"
+                    android:singleLine="true"
+                    android:textColor="@color/text_black_color"
+                    android:textColorHint="@color/text_hint_color"
+                    android:textSize="@dimen/item_name" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/jiantou_right" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/enterprise_workInfo_submit"
+                android:layout_width="330dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textview_click_selector"
+                android:text="提交"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/submit_font" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left1"
+        android:gravity="center|left"
+        android:paddingTop="12dp"
+        android:text="@string/contact_reminder"
+        android:textColor="@color/app_red"
+        android:textSize="@dimen/sp14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/app_white"
+        android:paddingLeft="15dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/add_family_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="添加联系人"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/family_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:ellipsize="middle"
+            android:maxEms="5"
+            android:singleLine="true"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/baixian1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="#bbbdbf"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/family_pho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="158234567894"
+            android:textSize="@dimen/item_name"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/family_relationship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_right1"
+            android:text="家人"
+            android:textColor="@color/text_contact_color"
+            android:textSize="@dimen/sp12"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second_LL"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_white"
+        android:paddingLeft="15dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/add_relationship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="添加联系人"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/relationshio_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:ellipsize="middle"
+            android:maxEms="5"
+            android:singleLine="true"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/baixian"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="#bbbdbf"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/relationship_pho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="158234567894"
+            android:textSize="@dimen/item_name"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/relationship1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_right1"
+            android:text="同学"
+            android:textColor="@color/text_contact_color"
+            android:textSize="@dimen/sp12" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contact_last"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/app_white"
+        android:paddingLeft="15dp"
+        android:paddingRight="12dp">
+
+        <TextView
+            android:id="@+id/add_contact_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="添加联系人"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/other_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:ellipsize="middle"
+            android:maxEms="5"
+            android:singleLine="true"
+            android:textColor="@color/app_blue_color"
+            android:textSize="@dimen/sp17"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/baixian2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="#bbbdbf"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/other_pho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:text="158234567894"
+            android:textSize="@dimen/item_name"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_right1"
+            android:text="朋友"
+            android:textColor="@color/text_contact_color"
+            android:textSize="@dimen/sp12" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/contact_btn"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/textview_click_selector"
+        android:text="提交"
+        android:textColor="@color/app_white"
+        android:textSize="@dimen/submit_font" />
+
+
+</LinearLayout>
