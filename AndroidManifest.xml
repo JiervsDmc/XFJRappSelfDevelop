@@ -140,6 +140,9 @@
         <activity android:name=".activity.samefunction.QueryPasswordActivity" />
         <activity android:name=".activity.CaptureActivity" />
         <activity android:name=".activity.protocol.AddLoanProtocolActivity" />
+        <activity android:name=".activity.RepayOnlineRecordActivity" />
+        <activity android:name=".activity.RepayDetailActivity"/>
+        <activity android:name=".activity.samefunction.BankCard3Activity"/>
         <activity
             android:name=".activity.UploadCertificationActivity"
             android:screenOrientation="portrait" />

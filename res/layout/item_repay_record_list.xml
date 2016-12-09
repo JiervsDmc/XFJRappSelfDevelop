@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <ImageView
+            android:id="@+id/iv_bank_logo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/cmb"
+            android:layout_marginTop="10dp"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/iv_bank_logo"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_bank_tailNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="中国银行 (7896)"
+                android:textColor="@color/black"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/tv_repay_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="2016-11-22  12:20:14"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_repay_result"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="支付成功"
+            android:textColor="@color/green"
+            android:layout_marginRight="15dp"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/app_background"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_project"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="xxxxxxxxx美容"
+            android:gravity="center_vertical"
+            android:textSize="19dp"/>
+
+        <TextView
+            android:id="@+id/tv_online_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="¥3456.86"
+            android:gravity="center_vertical"
+            android:textSize="19dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/app_background"></LinearLayout>
+
+</LinearLayout>

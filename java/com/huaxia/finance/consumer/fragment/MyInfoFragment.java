@@ -18,8 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huaxia.finance.consumer.R;
+import com.huaxia.finance.consumer.activity.RepayOnlineRecordActivity;
 import com.huaxia.finance.consumer.activity.UpdatePasswordActivity;
 import com.huaxia.finance.consumer.activity.protocol.CompanyProfileProtocolActivity;
+import com.huaxia.finance.consumer.activity.samefunction.BankCard3Activity;
 import com.huaxia.finance.consumer.activity.samefunction.BankCardActivity;
 import com.huaxia.finance.consumer.activity.samefunction.UserInfoActivity;
 import com.huaxia.finance.consumer.base.BaseFragment;
@@ -51,6 +53,7 @@ public class MyInfoFragment extends BaseFragment {
     private LinearLayout updateVis;
     private LinearLayout updatePassword;
     private LinearLayout callPhone;
+    private LinearLayout repayRecord;
     private TextView userPhonrNumber;
     private TextView tvAuthentication;
     private ImageView userHeadPortrait;
@@ -84,6 +87,7 @@ public class MyInfoFragment extends BaseFragment {
         updateVis = (LinearLayout) view.findViewById(R.id.updateVis_RL);
         updatePassword = (LinearLayout) view.findViewById(R.id.update_password_RL);
         logoutTV = (TextView) view.findViewById(R.id.logout_TV);
+        repayRecord = (LinearLayout) view.findViewById(R.id.repay_record);
         callPhone = (LinearLayout) view.findViewById(R.id.call_hotline);
         userPhonrNumber = (TextView) view.findViewById(R.id.user_phone_number);
         tvAuthentication = (TextView) view.findViewById(R.id.tv_authentication);
@@ -105,6 +109,7 @@ public class MyInfoFragment extends BaseFragment {
         companyInfo.setOnClickListener(this);
         updatePassword.setOnClickListener(this);
         updateVis.setOnClickListener(this);
+        repayRecord.setOnClickListener(this);
         callPhone.setOnClickListener(this);
     }
 
@@ -130,11 +135,17 @@ public class MyInfoFragment extends BaseFragment {
                 checkAppVersion();
                 break;
             case R.id.bankCard_RL:
-                intent = new Intent(getActivity(), BankCardActivity.class);
+                // TODO: 2016/12/9 新的我的银行卡列表页 
+                //intent = new Intent(getActivity(), BankCardActivity.class);
+                intent = new Intent(getActivity(), BankCard3Activity.class);
                 startActivity(intent);
                 break;
             case R.id.companyInfo_RL:
                 intent = new Intent(getActivity(), CompanyProfileProtocolActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.repay_record:
+                intent = new Intent(getActivity(), RepayOnlineRecordActivity.class);
                 startActivity(intent);
                 break;
             case R.id.call_hotline:

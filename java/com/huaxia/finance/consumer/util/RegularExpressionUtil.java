@@ -49,7 +49,7 @@ public class RegularExpressionUtil {
      * @return
      */
     public static boolean isBankCard(String bankCard){
-        Pattern p = Pattern.compile("^\\d{16}|\\d{18}|\\d{19}$");
+        Pattern p = Pattern.compile("^\\d{16}|\\d{19}$");
         Matcher m = p.matcher(bankCard);
         return  m.matches();
     }

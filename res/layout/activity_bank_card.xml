@@ -7,62 +7,82 @@
     >
     <include layout="@layout/title_bar" />
 
-    <LinearLayout
-        android:id="@+id/ll_bank"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="25dp"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:id="@+id/iv_bank"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
-            <TextView
-                android:id="@+id/tv_bank_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textColor="@color/app_white"
-                android:layout_marginLeft="15dp"
-                android:textSize="@dimen/item_name"/>
-            
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="60dp"
-            android:orientation="horizontal"
-            >
-        <TextView
-            android:id="@+id/tv_xing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="****   ****   ****"
-            android:textSize="@dimen/font2"
-            android:textColor="@color/app_white"
-            android:visibility="gone"/>
-            <TextView
-                android:id="@+id/bank_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text=""
-                android:textSize="@dimen/font1"
-                android:textColor="@color/app_white"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:id="@+id/ll_bank"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/iv_bank"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:id="@+id/tv_bank_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="center"
+                    android:textColor="@color/app_white"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="@dimen/item_name"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="60dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/tv_xing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="****   ****   ****"
+                    android:textSize="@dimen/font2"
+                    android:textColor="@color/app_white"
+                    android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/bank_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=""
+                    android:textSize="@dimen/font1"
+                    android:textColor="@color/app_white"/>
+
+            </LinearLayout>
         </LinearLayout>
-        </LinearLayout>
+
+        <TextView
+            android:id="@+id/is_onlineCard"
+            android:layout_width="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_height="40dp"
+            android:text="在线还款卡"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:textSize="14dp"
+            android:background="@color/app_white"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

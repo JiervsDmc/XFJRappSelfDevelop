@@ -16,7 +16,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="80dp"
             android:orientation="vertical">
 
 
@@ -128,8 +127,41 @@
                     android:src="@drawable/jiantou_right" />
             </LinearLayout>
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="14dp"
+                android:background="@color/color3" />
 
+            <LinearLayout
+                android:id="@+id/repay_record"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@color/app_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/mycard_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="在线还款记录"
+                    android:textSize="@dimen/item_name" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/jiantou_right" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/companyInfo_RL"
