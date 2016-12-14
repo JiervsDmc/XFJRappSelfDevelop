@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/bankcard_add"
+                android:textColor="@color/app_red"
+                android:textSize="@dimen/sp13"
+                android:background="@color/light_yellow"/>
+
+            <TextView
+                style="@style/card_add_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="请填写银行卡信息"
+                />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:text="持卡人"/>
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_user_name"
+                    android:hint="开户姓名"
+                    android:focusable="false"/>
+            </LinearLayout>
+
+            <View style="@style/card_line"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white">
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:id="@+id/tv_bank"
+                    android:text="银行"/>
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_bank_name"
+                    android:layout_marginRight="@dimen/margin_right1"
+                    android:layout_toLeftOf="@+id/iv_arrow"
+                    android:layout_toRightOf="@+id/tv_bank"
+                    android:hint="请选择银行"
+                    android:maxLength="18"
+                    android:focusable="false"/>
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/jiantou_right" />
+            </RelativeLayout>
+
+            <View style="@style/card_line"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:text="卡号"/>
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_bank_card_number"
+                    android:gravity="center_vertical|left"
+                    android:hint="请输入您的银行卡号"
+                    android:inputType="number"
+                    android:maxLength="19"/>
+            </LinearLayout>
+
+            <View style="@style/card_line"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:text="所在地"/>
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_bank_card_location"
+                    android:layout_weight="1"
+                    android:hint="请输入您的银行卡所在地"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <View style="@style/card_line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_branch_city"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:text="开户行"/>
+
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_branch_city"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:hint="请输入开户支行"/>
+
+            </LinearLayout>
+
+            <View style="@style/card_line"/>
+
+            <TextView
+                style="@style/card_add_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:text="请填写银行卡信息"
+                />
+
+            <EditText
+                style="@style/card_add_info"
+                android:id="@+id/et_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white"
+                android:hint="请输入银行预留手机号"
+                android:maxLength="15"
+                android:inputType="phone"/>
+
+            <View style="@style/card_line"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@color/app_white">
+                <EditText
+                    style="@style/card_add_info"
+                    android:id="@+id/et_identify_code"
+                    android:hint="请输入短信验证码"/>
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@+id/tv_count"
+                    android:background="#bbbdbf" />
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/margin_right1"
+                    android:text="获取验证码"
+                    android:textColor="@color/app_blue_color"
+                    android:textSize="@dimen/font1" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height">
+                <ImageView
+                    android:id="@+id/iv_select"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/add_card_default"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_left1"/>
+                <TextView
+                    style="@style/card_add_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_agree"
+                    android:text="绑定即同意《"
+                    android:layout_toRightOf="@+id/iv_select"/>
+                <TextView
+                    android:id="@+id/tv_protocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_blue_color"
+                    android:textSize="@dimen/item_name"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_agree"
+                    android:text="宝付银行卡认证协议"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/item_name"
+                    android:text="》"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_protocol"/>
+            </RelativeLayout>
+            <Button
+                android:id="@+id/bank_card_btn"
+                android:layout_width="330dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/textview_click_selector"
+                android:text="添加"
+                android:textColor="@color/app_white"
+                android:textSize="@dimen/submit_font" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

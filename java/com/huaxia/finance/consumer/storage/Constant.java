@@ -8,7 +8,7 @@ public class Constant {
     // https SIT_new接口调试地址 发布测试环境
     public static final String IP = "https://wap-managesit.huaxiafinance.com";
     // https UAT_new接口调试地址 发布测试环境
-   //public static final String IP="https://wap-manageuat.huaxiafinance.com";
+//   public static final String IP="https://wap-manageuat.huaxiafinance.com";
     //生产环境
   //public static final String IP="https://yifenqi.huaxiafinance.com";
     //服务器接口调试地址

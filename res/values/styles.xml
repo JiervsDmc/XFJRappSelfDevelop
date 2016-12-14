@@ -55,4 +55,40 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="bank_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/margin_left1</item>
+        <item name="android:textColor">@color/text_hint_color</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">15dp</item>
+    </style>
+
+    <style name="card_add_reminder">
+        <item name="android:layout_width">@dimen/margin_left3</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/item_name</item>
+        <item name="android:textColor">@color/app_black</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="card_add_info">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">@dimen/margin_left1</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/text_hint_color</item>
+        <item name="android:textColorHint">@color/text_hint_color</item>
+        <item name="android:textSize">@dimen/font1</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="card_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:background">@color/color3</item>
+    </style>
 </resources>

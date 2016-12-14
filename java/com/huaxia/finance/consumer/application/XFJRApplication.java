@@ -54,7 +54,7 @@ public class XFJRApplication extends Application {
         OkHttpUtils.initClient(okHttpClient);
 
         //同盾初始化sdk,FMAgent.ENV_SANDBOX表示测试环境，FMAgent.ENV_PRODUCTION表示生产环境
-        FMAgent.init(getApplicationContext(),FMAgent.ENV_SANDBOX);
+        FMAgent.init(getApplicationContext(),FMAgent.ENV_PRODUCTION);
     }
 
     public static synchronized  XFJRApplication getInstance(){

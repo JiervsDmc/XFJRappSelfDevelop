@@ -7,15 +7,16 @@
     <string name="bankcard_reminder">重要提示：此卡用于在指定还款日系统代扣每期应还金额，请您选择您日常使用的银行卡。</string>
     <string name="contact_reminder">选择联系人后请修改真实姓名</string>
     <string name="SMS_important_inform">吉林电信客户请使用本机发送CXXD至10001获取短信验证码</string>
-    <string name="cert_title">二代身份证、手持身份证自拍照、临时身份证+户口本、临时身份证+驾驶证</string>
-    <string name="student_title">学生证、校园一卡通、学信网</string>
-    <string name="work_title">工牌、劳动合同、单位开具的工作证明、营业执照</string>
-    <string name="finance_title">房产资料、车产资料、保单、理财证明</string>
-    <string name="zhengxin_title">简版、详版</string>
-    <string name="flow_title">工资流水或个人交易明细</string>
-    <string name="shoufu_title">首次支付凭证</string>
-    <string name="other_title">手术通知单；订购单</string>
+    <string name="cert_title">至少上传一项：二代身份证正反面、手持身份证自拍照、临时身份证+户口本、临时身份证+驾驶证</string>
+    <string name="student_title">至少上传一项：学生证、校园一卡通、学信网</string>
+    <string name="work_title">上传材料：工牌、劳动合同、单位开具的工作证明、营业执照</string>
+    <string name="finance_title">上传材料：房产资料、车产资料、保单、理财证明</string>
+    <string name="zhengxin_title">上传材料：简版、详版</string>
+    <string name="flow_title">上传材料：工资流水、个人交易明细</string>
+    <string name="shoufu_title">上传材料：首次支付凭证</string>
+    <string name="other_title">上传材料：手术通知单、订购单</string>
     <string name="default_title">其他凭证</string>
+    <string name="bankcard_add">重要提示：提前还款需要绑定银行卡验证银行账号信息，只能绑定自己名下的银行卡，请填写正确的信息。</string>
     <string-array name="marital_status">
         <item>已婚</item>
         <item>未婚</item>

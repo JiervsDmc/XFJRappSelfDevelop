@@ -44,6 +44,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/tv_project_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -66,6 +67,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/tv_create_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -88,6 +90,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/tv_repay_bank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -110,6 +113,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/order_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -132,6 +136,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/serial_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -155,6 +160,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/tv_repay_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"

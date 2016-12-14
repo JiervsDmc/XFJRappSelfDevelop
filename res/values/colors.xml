@@ -339,6 +339,8 @@
     <color name="black">#000000</color>
     <!-- 透明色 -->
     <color name="transparent">#00000000</color>
+    <!-- 浅黄色 -->
+    <color name="light_yellow">#FFFADE</color>
     <!-- 自定义颜色end-->
 
 

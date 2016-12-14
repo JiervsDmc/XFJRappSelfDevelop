@@ -2,13 +2,14 @@ package com.huaxia.finance.consumer.util;
 
 import android.util.Log;
 
+import com.huaxia.finance.consumer.BuildConfig;
 import com.huaxia.finance.consumer.application.XFJRApplication;
 
 
 public class LogUtil {
 	private static LogUtil logUtil;
 
-	private boolean isShowLog = true;
+	private boolean isShowLog = BuildConfig.LOG_DEBUG;
 	private String TAG = XFJRApplication.getInstance().getPackageName();
 	private String Tag = "123";
 	/**

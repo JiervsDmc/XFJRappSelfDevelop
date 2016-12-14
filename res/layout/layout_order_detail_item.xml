@@ -10,43 +10,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:gravity="center"
         android:background="@color/app_white"
+        android:gravity="center"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tv_number_periods"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="1/3期"
-                android:textSize="@dimen/submit_font"
-                android:textColor="@color/app_pass_color"/>
+                android:textColor="@color/app_pass_color"
+                android:textSize="@dimen/submit_font" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_periods_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/submit_font"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/submit_font" />
 
         </LinearLayout>
+
         <View
             android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/app_view_color"/>
+            android:background="@color/app_view_color" />
 
         <LinearLayout
             android:id="@+id/ll_other_price"
@@ -55,28 +58,30 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="当前实还"
-                android:textSize="@dimen/item_name"
-                android:textColor="@color/app_black"/>
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/item_name" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_return_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/item_name"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/item_name" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_advance_price"
             android:layout_width="match_parent"
@@ -84,28 +89,30 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="提前还款违约金"
-                android:textSize="@dimen/item_name"
-                android:textColor="@color/app_hint_text_color"/>
+                android:textColor="@color/app_hint_text_color"
+                android:textSize="@dimen/item_name" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_advance_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/item_name"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/item_name" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_reduction_price"
             android:layout_width="match_parent"
@@ -113,28 +120,30 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="减免金额"
-                android:textSize="@dimen/item_name"
-                android:textColor="@color/app_hint_text_color"/>
+                android:textColor="@color/app_hint_text_color"
+                android:textSize="@dimen/item_name" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_reduction_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/item_name"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/item_name" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_month_payinteamt"
             android:layout_width="match_parent"
@@ -142,29 +151,31 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="手续费"
-                android:textSize="@dimen/item_name"
-                android:textColor="@color/app_hint_text_color"/>
+                android:textColor="@color/app_hint_text_color"
+                android:textSize="@dimen/item_name" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_month_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/item_name"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/item_name" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_overdue_price"
             android:layout_width="match_parent"
@@ -172,71 +183,98 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="逾期罚息"
-                android:textSize="@dimen/item_name"
-                android:textColor="@color/app_hint_text_color"/>
+                android:textColor="@color/app_hint_text_color"
+                android:textSize="@dimen/item_name" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
+
             <TextView
                 android:id="@+id/tv_overdue_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/item_name"
                 android:textColor="@color/text_contact_color"
-                />
+                android:textSize="@dimen/item_name" />
 
         </LinearLayout>
+
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="10dp"
-            android:background="@color/app_view_color"/>
-        <LinearLayout
+            android:background="@color/app_view_color" />
+
+        <RelativeLayout
             android:id="@+id/ll_replay"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <TextView
+            android:layout_height="44dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_replay_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:text="还款日"
-                android:textSize="@dimen/submit_font"
-                android:textColor="@color/app_pass_color"/>
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tv_repayday_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="还款日"
+                    android:textColor="@color/app_pass_color"
+                    android:textSize="@dimen/submit_font" />
+
+                <TextView
+                    android:id="@+id/tv_repay_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_repayday_title"
+                    android:layout_marginLeft="15dp"
+                    android:text="待还款"
+                    android:textColor="#FFAE00"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_repayment_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv_repayday_title"
+                    android:text=""
+                    android:textColor="@color/text_contact_color"
+                    android:textSize="@dimen/submit_font" />
+            </RelativeLayout>
+
             <TextView
-                android:id="@+id/tv_repayment_time"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:layout_marginLeft="10dp"
-                android:textSize="@dimen/submit_font"
-                android:textColor="@color/text_contact_color"/>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_repayment_state"
+                android:layout_toRightOf="@+id/rl_replay_time" />
+
             <TextView
                 android:id="@+id/tv_repayment_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:text=""
-                android:textSize="@dimen/submit_font"
-                android:textColor="@color/app_pass_color"/>
+                android:textColor="@color/app_pass_color"
+                android:textSize="@dimen/submit_font" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 

@@ -33,7 +33,7 @@ import java.util.Map;
 
 import okhttp3.Call;
 
-public class OrderDetailActivity extends BaseActivity implements View.OnClickListener {
+public class OrderDetailActivity extends BaseActivity implements View.OnClickListener, OrderDetailAdapter.OnItemPay {
     @ViewInject(R.id.lv_order_detail)
     private ListView lvOrderDetail;
     @ViewInject(R.id.tv_order_number)
@@ -103,7 +103,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                     if(!body.get("schedule").toString().isEmpty()) {
                     tvOrderNumber.setText(body.get("orderNo").toString());
                     if(body.get("orderStatus").toString().contains("ST02")) {
-                        tvRepaymentCategory.setText("还款中");
+                        tvRepaymentCategory.setText("正在还款");
                         tvRepaymentCategory.setBackgroundResource(R.drawable.button_yuanjiao);
                     }else if(body.get("orderStatus").toString().contains("ST06")) {
                         tvRepaymentCategory.setText("逾期");
@@ -115,7 +115,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                     List orderDetailList = new ArrayList();
                     orderDetailList=(List)body.get("schedule");
                     for(int i=0;i<orderDetailList.size();i++) {
-                        OrderDetailAdapter detailAdaptor=new OrderDetailAdapter(OrderDetailActivity.this,orderDetailList);
+                        OrderDetailAdapter detailAdaptor=new OrderDetailAdapter(OrderDetailActivity.this,orderDetailList,OrderDetailActivity.this);
                         lvOrderDetail.setAdapter(detailAdaptor);
                     }
                     }
@@ -150,6 +150,16 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                 intent.putExtra("orderNo",orderNo);
                 startActivity(intent);
                 break;
+        }
+    }
+
+    @Override
+    public void payOnline(int clickPosition,int position) {
+        if(clickPosition == position){
+            Intent intent = new Intent(OrderDetailActivity.this,PayActivity.class);
+            startActivity(intent);
+        }else{
+            ToastUtils.showSafeToast(this,"请先将上一期欠款还清");
         }
     }
 }

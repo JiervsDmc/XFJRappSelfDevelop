@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_pay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+    <include layout="@layout/title_bar"/>
+    <TextView
+        android:layout_below="@+id/title_bar"
+        android:id="@+id/tv_total_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/text_hint_color"
+        android:text="还款总额(元)"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:id="@+id/tv_pay_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_total_title"
+        android:layout_marginTop="10dp"
+        android:text="8888.03"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_goods"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_below="@+id/tv_pay_num"
+        android:layout_marginTop="30dp">
+        <TextView
+            style="@style/bank_item"
+            android:id="@+id/tv_goods_title"
+            android:text="还款商品"/>
+        <TextView
+            style="@style/bank_item"
+            android:id="@+id/tv_goods"
+            android:layout_toRightOf="@+id/tv_goods_title"
+            android:text="美容美发"/>
+        <TextView
+            style="@style/bank_item"
+            android:id="@+id/tv_time_left"
+            android:text="剩余时间:"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/rl_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_view_color"
+        android:layout_below="@+id/rl_goods"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_select_title"
+        android:layout_below="@+id/rl_goods"
+        android:text="选择支付银行卡"
+        android:paddingLeft="5dp"
+        android:background="@color/app_background"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_select_title"
+        android:background="@color/app_background">
+    <ListView
+        android:id="@+id/lv_bankcard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_pay"
+        android:background="@color/transparent"
+        android:footerDividersEnabled="false"/>
+
+    <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
+        android:text="确认支付"
+        android:textSize="15dp"
+        android:textColor="@color/app_white"
+        android:background="@color/app_blue_color"/>
+    </RelativeLayout>
+</RelativeLayout>
