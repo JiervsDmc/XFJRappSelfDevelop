@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="220dp"
-    android:layout_height="wrap_content" >
+    android:layout_width="240dp"
+    android:layout_height="180dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="100dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="3dp"
@@ -28,7 +28,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
             android:orientation="horizontal" >
 
             <TextView
@@ -41,7 +42,10 @@
                 android:gravity="center"
                 android:text="取消"
                 android:textColor="@color/app_blue_color" />
-
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/app_view_color" />
             <TextView
                 android:id="@+id/tv_ok"
                 android:layout_width="0dp"

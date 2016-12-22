@@ -18,9 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:text="3,456.86"
-            android:textSize="36dp"
+            android:layout_marginTop="29dp"
+            android:textSize="30dp"
             android:textColor="@color/app_black"/>
         <TextView
             android:id="@+id/tv_detail_result"
@@ -28,11 +27,10 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:text="还款成功"
-            android:textSize="19dp"/>
+            android:textSize="15dp"/>
 
         <RelativeLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -40,8 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="商品信息"
-                android:textSize="18dp"/>
+                android:text="商品信息:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/tv_project_info"
@@ -49,13 +47,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:text="XXXXXXXXX美容"
-                android:textSize="18dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -63,8 +61,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="创建时间"
-                android:textSize="18dp"/>
+                android:text="创建时间:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/tv_create_time"
@@ -72,13 +70,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:text="2016-11-28 20:22:10"
-                android:textSize="18dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -86,8 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="支付银行"
-                android:textSize="18dp"/>
+                android:text="支付银行:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/tv_repay_bank"
@@ -95,13 +93,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:text="中国银行(2678)"
-                android:textSize="18dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -109,8 +107,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="订 单 号"
-                android:textSize="18dp"/>
+                android:text="订 单 号:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/order_no"
@@ -118,36 +116,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:text="786387593805830909089897"
-                android:textSize="16dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_marginTop="10dp"
+        <LinearLayout
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="流 水 号"
-                android:textSize="18dp"/>
+                android:text="流 水 号:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/serial_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:text="786387123593805830909089897"
-                android:textSize="16dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -156,8 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="完成支付时间"
-                android:textSize="18dp"/>
+                android:text="完成支付时间:"
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/tv_repay_time"
@@ -166,8 +166,8 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="15dp"
                 android:layout_alignParentRight="true"
-                android:text="2016-11-28 20:22:10"
-                android:textSize="18dp"/>
+                android:text=""
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 

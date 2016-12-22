@@ -24,6 +24,7 @@ import com.huaxia.finance.consumer.util.json.JsonUtils;
 import com.lidroid.xutils.util.LogUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,10 +41,14 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
     private TextView tvOrderNumber;
     @ViewInject(R.id.tv_repayment_category)
     private TextView tvRepaymentCategory;
-    private  Intent intent;
+    private Intent intent;
     private String orderNo;
     private String approvalAmount;
     private String stagesMoney;
+    private String productName;
+    private int totalPeriod;
+    private int payPosition;
+    private List orderDetailList;
 
     @Override
     protected int getLayout() {
@@ -58,36 +63,37 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void setup() {
         super.setup();
-        orderNo=getIntent().getStringExtra("orderNo");
+        orderNo = getIntent().getStringExtra("orderNo");
         approvalAmount = getIntent().getStringExtra("approvalAmount");
         stagesMoney = getIntent().getStringExtra("stagesMoney");
-        LogUtil.getLogutil().d("接收到的orderNo"+orderNo);
-        getOrderDetail();
+        LogUtil.getLogutil().d("接收到的orderNo" + orderNo);
+//        getOrderDetail();
         //如果是经过降额处理的，页底有3个协议
-        if (!approvalAmount.equals(stagesMoney)&& approvalAmount!= null && stagesMoney!=null) {
+        if (!approvalAmount.equals(stagesMoney) && approvalAmount != null && stagesMoney != null) {
             View mFootView = getLayoutInflater().inflate(R.layout.order_add_detail_footer, null);
-            TextView tvProtocol=(TextView) mFootView.findViewById(R.id.tv_protocol);
-            TextView tvProtocol1=(TextView) mFootView.findViewById(R.id.tv_protocol1);
-            TextView tvProtocol3=(TextView) mFootView.findViewById(R.id.tv_protocol3);
+            TextView tvProtocol = (TextView) mFootView.findViewById(R.id.tv_protocol);
+            TextView tvProtocol1 = (TextView) mFootView.findViewById(R.id.tv_protocol1);
+            TextView tvProtocol3 = (TextView) mFootView.findViewById(R.id.tv_protocol3);
             lvOrderDetail.addFooterView(mFootView);
             tvProtocol.setOnClickListener(this);
             tvProtocol1.setOnClickListener(this);
             tvProtocol3.setOnClickListener(this);
-        }else {
+        } else {
             View mFootView = getLayoutInflater().inflate(R.layout.order_detail_footer, null);
-            TextView tvProtocol=(TextView) mFootView.findViewById(R.id.tv_protocol);
-            TextView tvProtocol1=(TextView) mFootView.findViewById(R.id.tv_protocol1);
+            TextView tvProtocol = (TextView) mFootView.findViewById(R.id.tv_protocol);
+            TextView tvProtocol1 = (TextView) mFootView.findViewById(R.id.tv_protocol1);
             lvOrderDetail.addFooterView(mFootView);
             tvProtocol.setOnClickListener(this);
             tvProtocol1.setOnClickListener(this);
         }
     }
+
     //获取用户详情
     private void getOrderDetail() {
         Map<String, Object> mapDetail = new HashMap<>();
-        mapDetail.put("userUuid",mgr.getVal(UniqueKey.APP_USER_ID));
-        mapDetail.put("orderNo",orderNo);
-        LogUtil.getLogutil().d("orderNo的值"+orderNo);
+        mapDetail.put("userUuid", mgr.getVal(UniqueKey.APP_USER_ID));
+        mapDetail.put("orderNo", orderNo);
+        LogUtil.getLogutil().d("orderNo的值" + orderNo);
         ApiCaller.call(this, Constant.URL, "0009", "appService", mapDetail, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -98,29 +104,41 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
             @Override
             public void onResponse(String response, int id) {
                 super.onResponse(response, id);
-                LogUtil.getLogutil().d("还款计划结果是"+response);
-                if(head.getResponseCode().contains("0000")) {
-                    if(!body.get("schedule").toString().isEmpty()) {
-                    tvOrderNumber.setText(body.get("orderNo").toString());
-                    if(body.get("orderStatus").toString().contains("ST02")) {
-                        tvRepaymentCategory.setText("正在还款");
-                        tvRepaymentCategory.setBackgroundResource(R.drawable.button_yuanjiao);
-                    }else if(body.get("orderStatus").toString().contains("ST06")) {
-                        tvRepaymentCategory.setText("逾期");
-                        tvRepaymentCategory.setBackgroundResource(R.drawable.corners_red_bg);
-                    }else if(body.get("orderStatus").toString().contains("ST07")) {
-                        tvRepaymentCategory.setText("已结清");
-                        tvRepaymentCategory.setBackgroundResource(R.drawable.corners_green_bg);
-                    }
-                    List orderDetailList = new ArrayList();
-                    orderDetailList=(List)body.get("schedule");
-                    for(int i=0;i<orderDetailList.size();i++) {
-                        OrderDetailAdapter detailAdaptor=new OrderDetailAdapter(OrderDetailActivity.this,orderDetailList,OrderDetailActivity.this);
+                LogUtil.getLogutil().d("还款计划结果是" + response);
+                if (head.getResponseCode().contains("0000")) {
+                    productName = body.get("productName").toString();
+                    if (!body.get("schedule").toString().isEmpty()) {
+                        tvOrderNumber.setText(body.get("orderNo").toString());
+                        if (body.get("orderStatus").toString().contains("ST02")) {
+                            tvRepaymentCategory.setText("正在还款");
+                            tvRepaymentCategory.setBackgroundResource(R.drawable.button_yuanjiao);
+                        } else if (body.get("orderStatus").toString().contains("ST06")) {
+                            tvRepaymentCategory.setText("逾期");
+                            tvRepaymentCategory.setBackgroundResource(R.drawable.corners_red_bg);
+                        } else if (body.get("orderStatus").toString().contains("ST07")) {
+                            tvRepaymentCategory.setText("已结清");
+                            tvRepaymentCategory.setBackgroundResource(R.drawable.corners_green_bg);
+                        }
+                        orderDetailList = new ArrayList();
+                        orderDetailList = (List) body.get("schedule");
+                        totalPeriod = orderDetailList.size() - 1;
+                        boolean flag = false;
+                        payPosition = -1;
+                        for (int i = 0; i < orderDetailList.size(); i++) {
+                            if (!flag) {
+                                Map map = (Map) orderDetailList.get(i);
+                                if (map.get("mayRepay").toString().equals("0")) {
+                                    payPosition = i;
+                                    flag = true;
+                                }
+                            }
+                        }
+                        LogUtil.getLogutil().d("payPosition = " + payPosition);
+                        OrderDetailAdapter detailAdaptor = new OrderDetailAdapter(OrderDetailActivity.this, orderDetailList, OrderDetailActivity.this);
                         lvOrderDetail.setAdapter(detailAdaptor);
                     }
-                    }
-                }else {
-                    ToastUtils.showSafeToast(OrderDetailActivity.this,head.getResponseMsg());
+                } else {
+                    ToastUtils.showSafeToast(OrderDetailActivity.this, head.getResponseMsg());
                 }
             }
         });
@@ -129,37 +147,111 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         super.onClick(view);
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tv_protocol:
-                intent=new Intent(this, LoanProtocolActivity.class);
-                intent.putExtra("type","1");
-                intent.putExtra("orderNo",orderNo);
+                intent = new Intent(this, LoanProtocolActivity.class);
+                intent.putExtra("type", "1");
+                intent.putExtra("orderNo", orderNo);
                 startActivity(intent);
                 break;
 
             case R.id.tv_protocol1:
-                intent=new Intent(this, ConsultationProtocolActivity.class);
-                intent.putExtra("type","1");
-                intent.putExtra("orderNo",orderNo);
+                intent = new Intent(this, ConsultationProtocolActivity.class);
+                intent.putExtra("type", "1");
+                intent.putExtra("orderNo", orderNo);
                 startActivity(intent);
                 break;
 
             case R.id.tv_protocol3:
-                intent=new Intent(this, AddLoanProtocolActivity.class);
-                intent.putExtra("type","1");
-                intent.putExtra("orderNo",orderNo);
+                intent = new Intent(this, AddLoanProtocolActivity.class);
+                intent.putExtra("type", "1");
+                intent.putExtra("orderNo", orderNo);
                 startActivity(intent);
                 break;
         }
     }
+    String repayMoney;
+    String repayPeriod;
+    @Override
+    public void payOnline(int position) {
+
+        String seqid;
+        boolean isOnePay;
+        String msg ;
+        Map map = (Map)orderDetailList.get(position);
+        seqid = map.get("seqid").toString();
+        if(map.get("seqid").equals("0")){
+            repayMoney = map.get("payinteamt").toString();
+            isOnePay = true;
+        }else{
+            repayMoney = map.get("payamt").toString();
+            isOnePay = false;
+        }
+        repayPeriod = isOnePay?"0":seqid;
+        if(position!=payPosition){
+//            if(map.get("status").toString().equals("030")){
+//                msg = "该笔分期银行系统正在处理中，请稍后再试！";
+//            }else{
+                msg = "请按分期期数顺序还款！";
+//            }
+            ToastUtils.showSafeToast(this,msg);
+        }else {
+            checkIfCanPay();
+        }
+
+    }
+
+    private void checkIfCanPay() {
+            Map<String, Object> mapDetail = new HashMap<>();
+            mapDetail.put("userUuid", mgr.getVal(UniqueKey.APP_USER_ID));
+            mapDetail.put("orderNo", orderNo);
+            mapDetail.put("productName", productName);
+            mapDetail.put("repayMoney", repayMoney);
+            mapDetail.put("repayPeriod", repayPeriod);
+            mapDetail.put("totalyPeriod", totalPeriod);
+            ApiCaller.call(this, Constant.URL, "0047", "appService", mapDetail, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
+                @Override
+                public void onError(Call call, Exception e, int id) {
+                    super.onError(call, e, id);
+                }
+
+                @Override
+                public void onResponse(String response, int id) {
+                    super.onResponse(response, id);
+                    LogUtil.getLogutil().d("支付确认" + response);
+                    if (head.getResponseCode().contains("0000")) {
+                        int second = 0;
+                        try {
+                            second = Integer.valueOf(body.get("second").toString());
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        }
+                        List bankList = new ArrayList();
+                        String realName = body.get("name").toString();
+                        bankList = (List) body.get("bankList");
+                        Map payRecord = (Map) body.get("repayRecord");
+                        Intent intent = new Intent(OrderDetailActivity.this, PayActivity.class);
+                        intent.putExtra("orderNo", orderNo);
+                        intent.putExtra("productName", productName);
+                        intent.putExtra("repayMoney", repayMoney);
+                        intent.putExtra("repayPeriod", repayPeriod);
+                        intent.putExtra("totalPeriod", String.valueOf(totalPeriod));
+
+                        intent.putExtra("second", second);
+                        intent.putExtra("realName", realName);
+                        intent.putExtra("bankList", (Serializable) bankList);
+                        intent.putExtra("payRecord", (Serializable) payRecord);
+                        startActivity(intent);
+                    } else {
+                        ToastUtils.showSafeToast(OrderDetailActivity.this, head.getResponseMsg());
+                    }
+                }
+            });
+    }
 
     @Override
-    public void payOnline(int clickPosition,int position) {
-        if(clickPosition == position){
-            Intent intent = new Intent(OrderDetailActivity.this,PayActivity.class);
-            startActivity(intent);
-        }else{
-            ToastUtils.showSafeToast(this,"请先将上一期欠款还清");
-        }
+    protected void onResume() {
+        super.onResume();
+        getOrderDetail();
     }
 }

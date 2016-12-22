@@ -54,12 +54,14 @@ public class LogOutCheckDialog extends Dialog implements OnClickListener {
 		dialog.setContentView(view);
 		dialog.show();
 	
-		WindowManager manager = ((Activity) context).getWindowManager(); 
+		/*WindowManager manager = ((Activity) context).getWindowManager();
 		Display display = manager.getDefaultDisplay(); 
-		int width = display.getWidth(); 
-		int height = display.getHeight();
+		int width = display.getWidth();
+		int height = display.getHeight();*/
+		/*int width = 720;
+		int height = 540;*/
 		dialog.getWindow().setGravity(Gravity.CENTER);
-		dialog.getWindow().setLayout(width/2, height/4);
+		//dialog.getWindow().setLayout(width, height);
 
 	}
 

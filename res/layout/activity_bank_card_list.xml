@@ -8,6 +8,7 @@
 
     <ListView
         android:id="@+id/lv_bank_card_list"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@null"></ListView>

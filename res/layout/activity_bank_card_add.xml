@@ -44,7 +44,8 @@
                     style="@style/card_add_info"
                     android:id="@+id/et_user_name"
                     android:hint="开户姓名"
-                    android:focusable="false"/>
+                    android:focusable="false"
+                    />
             </LinearLayout>
 
             <View style="@style/card_line"/>
@@ -72,6 +73,7 @@
                     android:layout_height="14dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
                     android:src="@drawable/jiantou_right" />
             </RelativeLayout>
 
@@ -104,9 +106,9 @@
                 <TextView
                     style="@style/card_add_reminder"
                     android:text="所在地"/>
-                <EditText
+                <TextView
                     style="@style/card_add_info"
-                    android:id="@+id/et_bank_card_location"
+                    android:id="@+id/tv_bank_card_location"
                     android:layout_weight="1"
                     android:hint="请输入您的银行卡所在地"
                     android:singleLine="true"/>
@@ -125,7 +127,7 @@
                     style="@style/card_add_reminder"
                     android:text="开户行"/>
 
-                <EditText
+                <com.huaxia.finance.consumer.view.StringFilterEdittext
                     style="@style/card_add_info"
                     android:id="@+id/et_branch_city"
                     android:layout_weight="1"
@@ -159,7 +161,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/item_height"
                 android:background="@color/app_white">
-                <EditText
+                <com.huaxia.finance.consumer.view.StringFilterEdittext
                     style="@style/card_add_info"
                     android:id="@+id/et_identify_code"
                     android:hint="请输入短信验证码"/>
@@ -184,41 +186,41 @@
                     android:textColor="@color/app_blue_color"
                     android:textSize="@dimen/font1" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/item_height">
-                <ImageView
-                    android:id="@+id/iv_select"
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/add_card_default"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/margin_left1"/>
-                <TextView
-                    style="@style/card_add_reminder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_agree"
-                    android:text="绑定即同意《"
-                    android:layout_toRightOf="@+id/iv_select"/>
-                <TextView
-                    android:id="@+id/tv_protocol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/app_blue_color"
-                    android:textSize="@dimen/item_name"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/tv_agree"
-                    android:text="宝付银行卡认证协议"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/app_black"
-                    android:textSize="@dimen/item_name"
-                    android:text="》"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/tv_protocol"/>
-            </RelativeLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/item_height">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_select"-->
+                    <!--android:layout_width="14dp"-->
+                    <!--android:layout_height="14dp"-->
+                    <!--android:src="@drawable/add_card_default"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="@dimen/margin_left1"/>-->
+                <!--<TextView-->
+                    <!--style="@style/card_add_reminder"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/tv_agree"-->
+                    <!--android:text="绑定即同意《"-->
+                    <!--android:layout_toRightOf="@+id/iv_select"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_protocol"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/app_blue_color"-->
+                    <!--android:textSize="@dimen/item_name"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toRightOf="@+id/tv_agree"-->
+                    <!--android:text="宝付银行卡认证协议"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/app_black"-->
+                    <!--android:textSize="@dimen/item_name"-->
+                    <!--android:text="》"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toRightOf="@+id/tv_protocol"/>-->
+            <!--</RelativeLayout>-->
             <Button
                 android:id="@+id/bank_card_btn"
                 android:layout_width="330dp"

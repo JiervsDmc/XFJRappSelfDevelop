@@ -13,8 +13,10 @@ import com.huaxia.finance.consumer.base.BaseActivity;
 import com.huaxia.finance.consumer.http.ApiCaller;
 import com.huaxia.finance.consumer.storage.Constant;
 import com.huaxia.finance.consumer.storage.UniqueKey;
+import com.huaxia.finance.consumer.util.DialogSelectAddress;
 import com.huaxia.finance.consumer.util.IsNullUtils;
 import com.huaxia.finance.consumer.util.ListViewDialog;
+import com.huaxia.finance.consumer.util.LogUtil;
 import com.huaxia.finance.consumer.util.RegularExpressionUtil;
 import com.huaxia.finance.consumer.util.ToastUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -25,29 +27,34 @@ import java.util.Map;
 
 import okhttp3.Call;
 
-public class BankCardAddActivity extends BaseActivity implements ListViewDialog.OnSelectItem {
+public class BankCardAddActivity extends BaseActivity implements ListViewDialog.OnSelectItem, DialogSelectAddress.OnSelectCityDialog {
     @ViewInject(R.id.et_user_name)
     EditText et_user_name;
     @ViewInject(R.id.et_bank_name)
     EditText et_bank_name;
     @ViewInject(R.id.et_bank_card_number)
     EditText et_bank_card_number;
-    @ViewInject(R.id.et_bank_card_location)
-    EditText et_bank_card_location;
+    @ViewInject(R.id.tv_bank_card_location)
+    TextView tv_bank_card_location;
     @ViewInject(R.id.et_branch_city)
     EditText et_branch_city;
     @ViewInject(R.id.et_phone_number)
     EditText et_phone_number;
     @ViewInject(R.id.et_identify_code)
     EditText et_identify_code;
-    @ViewInject(R.id.iv_select)
-    ImageView iv_select;
+//    @ViewInject(R.id.iv_select)
+//    ImageView iv_select;
     @ViewInject(R.id.tv_count)
     TextView tv_count;
     private ListViewDialog listViewDialog;
-    private boolean isAgree;
+    private DialogSelectAddress dialogCity;
+    private String pid;
+    private String cid;
+//    private boolean isAgree;
     private String bankCode;
-
+    private CountDownTimer countDownTimer;
+    private String transId;
+    private String realName;
     @Override
     protected int getLayout() {
         return R.layout.activity_bank_card_add;
@@ -61,43 +68,55 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
     @Override
     protected void setup() {
         super.setup();
+        realName = getIntent().getStringExtra("realName");
+        et_user_name.setText(realName);
         listViewDialog = new ListViewDialog(this, this);
+        dialogCity = new DialogSelectAddress(this, this);
     }
 
-    public void checkIsNull() {
-        if (IsNullUtils.isNull(et_bank_name.getText().toString())||et_bank_name.getText().toString().equals("请选择银行")) {
+    public boolean checkIsNull(boolean hasCode) {
+        if (IsNullUtils.isNull(et_bank_name.getText().toString()) || et_bank_name.getText().toString().equals("请选择银行")) {
             toast("请选择银行");
-            return;
+            return true;
         }
         if (!RegularExpressionUtil.isBankCard(et_bank_card_number.getText().toString())) {
             toast("请填写正确的银行卡号");
-            return;
+            return true;
         }
-        if (IsNullUtils.isNull(et_bank_card_location.getText().toString())) {
+        if (IsNullUtils.isNull(tv_bank_card_location.getText().toString())) {
             toast("请填写银行卡所在地");
-            return;
+            return true;
         }
         if (IsNullUtils.isNull(et_branch_city.getText().toString())) {
             toast("请填写开户支行");
-            return;
+            return true;
         }
         if (IsNullUtils.isNull(et_phone_number.getText().toString())) {
             toast("请填写预留手机号码");
-            return;
+            return true;
         }
-        if(IsNullUtils.isNull(et_identify_code.getText().toString())) {
+        if (hasCode && IsNullUtils.isNull(et_identify_code.getText().toString())) {
             toast("请填写验证码");
-            return;
+            return true;
         }
-        Intent intent = new Intent(this, PayActivity.class);
-        startActivity(intent);
-//        uploadDate();
+        return false;
     }
 
     public void uploadDate() {
         final Map map = new HashMap();
         map.put("userUuid", mgr.getVal(UniqueKey.APP_USER_ID));
-        ApiCaller.call(this, Constant.URL, "0019", "appService", map, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
+        map.put("cardNo", et_bank_card_number.getText().toString());
+        map.put("bankName", et_bank_name.getText().toString());
+        map.put("bankAddress", et_branch_city.getText().toString());
+        map.put("cellphone", et_phone_number.getText().toString());
+        map.put("provinceId", pid);
+        map.put("cityId", cid);
+        map.put("realName", et_user_name.getText().toString());
+        map.put("bankCode", bankCode);
+        map.put("smsCode", et_identify_code.getText().toString());
+        map.put("transId", transId);
+        LogUtil.getLogutil().d("bankCodebankCode = " + bankCode);
+        ApiCaller.call(this, Constant.URL, "0049", "appService", map, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
             @Override
             public void onError(Call call, Exception e, int id) {
                 super.onError(call, e, id);
@@ -107,17 +126,12 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
             @Override
             public void onResponse(String response, int id) {
                 super.onResponse(response, id);
-//                4010 -> 输入参数为空或格式错误
-//                0000 –> 处理成功，直接调用获取代扣协议接口
-//                0020 –> 已经认证成功
-//                0027 –> 认证成功，出现此编码弹出提示语直接跳转到列表页，无需签约
-//                0022 -> 已发送短信，此时需要弹出短信输入框，获取用户短信码，并记录
-                if (head.getResponseCode().equals("0022")) {
-                    ToastUtils.showSafeToast(BankCardAddActivity.this, head.getResponseMsg());
-                } else if (head.getResponseCode().equals("0000")) {
-                } else if (head.getResponseCode().equals("0027")) {
-                    ToastUtils.showSafeToast(BankCardAddActivity.this, head.getResponseMsg());
-                    finish();
+                if (head.getResponseCode().equals("0000")) {
+                    Intent intent = new Intent(BankCardAddActivity.this, PayActivity.class);
+                    intent.putExtra("refresh","true");
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    cancelCountTimer(countDownTimer);
+                    startActivity(intent);
                 } else {
                     ToastUtils.showSafeToast(BankCardAddActivity.this, head.getResponseMsg());
                 }
@@ -125,16 +139,17 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
             }
         });
     }
-    @OnClick(R.id.iv_select)
-    public void iv_select(View view) {
-        isAgree = !isAgree;
-        iv_select.setImageDrawable(isAgree ? getResources().getDrawable(R.drawable.add_card_selected) : getResources().getDrawable(R.drawable.add_card_default));
-    }
 
-    @OnClick(R.id.tv_protocol)
-    public void tv_protocol(View view) {
+//    @OnClick(R.id.iv_select)
+//    public void iv_select(View view) {
+//        isAgree = !isAgree;
+//        iv_select.setImageDrawable(isAgree ? getResources().getDrawable(R.drawable.add_card_selected) : getResources().getDrawable(R.drawable.add_card_default));
+//    }
 
-    }
+//    @OnClick(R.id.tv_protocol)
+//    public void tv_protocol(View view) {
+//
+//    }
 
     @OnClick(R.id.et_bank_name)
     public void et_bank_name(View view) {
@@ -143,17 +158,53 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
 
     @OnClick(R.id.bank_card_btn)
     public void bank_card_btn(View view) {
-        if (!isAgree) {
-            ToastUtils.showSafeToast(this, "请先同意认证协议");
-            return;
+//        if (!isAgree) {
+//            ToastUtils.showSafeToast(this, "请先同意认证协议");
+//            return;
+//        }
+        if(!checkIsNull(true)){
+            uploadDate();
         }
-        checkIsNull();
+    }
 
+    @OnClick(R.id.tv_bank_card_location)
+    public void tv_bank_card_location(View view) {
+        dialogCity.showDialog();
     }
 
     @OnClick(R.id.tv_count)
     public void tv_count(View view) {
-            startCounter(10);
+        if(!checkIsNull(false)){
+            getSMSCode();
+        }
+    }
+
+    private void getSMSCode() {
+        final Map map = new HashMap();
+        map.put("userUuid", mgr.getVal(UniqueKey.APP_USER_ID));
+        map.put("accountName", et_user_name.getText().toString());
+        map.put("accountNo", et_bank_card_number.getText().toString());
+        map.put("mobileNo", et_phone_number.getText().toString());
+        map.put("bankCode", bankCode);
+        ApiCaller.call(this, Constant.URL, "0048", "appService", map, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                super.onError(call, e, id);
+                //toast("网络异常");
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                super.onResponse(response, id);
+                if (head.getResponseCode().equals("0000")) {
+                    transId = (String) body.get("transId");
+                    startCounter(60);
+                } else {
+                    ToastUtils.showSafeToast(BankCardAddActivity.this, head.getResponseMsg());
+                }
+
+            }
+        });
     }
 
     @Override
@@ -203,7 +254,14 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
             case "华夏银行":
                 bankCode = "B016";
                 break;
+            case "中国邮政储蓄银行":
+                bankCode = "B011";
+                break;
+            case "上海银行":
+                bankCode = "B020";
+                break;
         }
+        LogUtil.getLogutil().d("bankCode = " + bankCode);
     }
 
     /**
@@ -212,7 +270,7 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
      * @param sec 倒计时时间（单位：s）
      */
     private void startCounter(int sec) {
-        new CountDownTimer((sec + 1) * 1000, 1000) {
+        countDownTimer = new CountDownTimer((sec + 1) * 1000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 int left = (int) ((millisUntilFinished - 1000) / 1000);
@@ -227,6 +285,26 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
                 tv_count.setTextColor(getResources().getColor(R.color.app_blue_color));
                 tv_count.setEnabled(true);
             }
-        }.start();
+        };
+        countDownTimer.start();
+    }
+
+    private void cancelCountTimer(CountDownTimer countTimer) {
+        if (countTimer != null) {
+            countTimer.cancel();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        cancelCountTimer(countDownTimer);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onSelectCity(String selectedCity, String cityCode, String pidCode) {
+        tv_bank_card_location.setText(selectedCity);
+        pid = pidCode;
+        cid = cityCode;
     }
 }

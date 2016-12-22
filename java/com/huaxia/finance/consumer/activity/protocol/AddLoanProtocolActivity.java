@@ -77,6 +77,8 @@ public class AddLoanProtocolActivity extends BaseActivity implements OnClickList
 	private String orderNo;
 
 	private String type;
+	//定位返回码
+	private int returnCode;
 	//定位纬经度
 	private String gpsCode;
 	public LocationClient mLocationClient = null;
@@ -221,7 +223,11 @@ public class AddLoanProtocolActivity extends BaseActivity implements OnClickList
 		map = new HashMap();
 		map.put("orderNo",orderNo);
 		map.put("userUuid",mgr.getVal(UniqueKey.APP_USER_ID));
-		map.put("gpsCode",gpsCode);
+		if ((returnCode==61 || returnCode==161) && !gpsCode.equals("")&& gpsCode!=null) {
+			map.put("gpsCode",gpsCode);
+		}else {
+			map.put("gpsCode","-1.0,-1.0");
+		}
 		ApiCaller.call(this, Constant.URL, "0023", "appService", map, new ApiCaller.MyStringCallback(this, true, false, false, null, null) {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -277,6 +283,7 @@ public class AddLoanProtocolActivity extends BaseActivity implements OnClickList
 		@Override
 		public void onReceiveLocation(BDLocation location) {
 			StringBuffer sb = new StringBuffer();
+			returnCode = location.getLocType();
 			gpsCode = sb.append(location.getLongitude()).append(",").append(location.getLatitude()).toString();
 		}
 	}

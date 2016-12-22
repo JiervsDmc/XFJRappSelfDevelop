@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/progress_horizontal"
+            android:max="100"
+            android:layout_height="3dp"/>
+
+        <WebView
+            android:id="@+id/wv_protocol"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/progressBar"
+            android:scrollbars="none"/>
+
+        <include layout="@layout/view_loading" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_know"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="70dp">
+        <TextView
+            android:id="@+id/protocol_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="我已知悉《宝付银行卡认证协议》中所有条款并同意全部条款"
+            android:textSize="@dimen/item_name"
+            android:textColor="@color/app_pass_color"/>
+        <TextView
+            android:id="@+id/tv_agree"
+            android:layout_width="70dp"
+            android:layout_height="34dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text="同意"
+            android:textColor="@color/app_white"
+            android:background="@drawable/button_yuanjiao"
+            />
+    </LinearLayout>
+</LinearLayout>

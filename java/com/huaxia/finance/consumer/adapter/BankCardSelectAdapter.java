@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huaxia.finance.consumer.R;
-import com.huaxia.finance.consumer.bean.CardSelectBean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by mirui on 2016/12/8.
@@ -20,13 +20,16 @@ import java.util.List;
 
 public class BankCardSelectAdapter extends BaseAdapter {
     private Context mContext;
-    List<CardSelectBean> dataList = new ArrayList<>();
-
-    public BankCardSelectAdapter(Context context, List<CardSelectBean> list) {
+    List dataList = new ArrayList<>();
+    private int slectIndex;
+    public BankCardSelectAdapter(Context context, List list, int index) {
         mContext = context;
         dataList = list;
+        slectIndex = index;
     }
-
+    public void setSelectIndex(int index){
+        slectIndex = index;
+    }
     @Override
     public int getCount() {
         return dataList.size();
@@ -55,21 +58,15 @@ public class BankCardSelectAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-        CardSelectBean cardSelectBean = dataList.get(position);
-        switch (cardSelectBean.getSelectType().toString()){
-            case "0":
-                holder.iv_select.setVisibility(View.VISIBLE);
-                holder.iv_select.setImageResource(R.drawable.jiantou_right);
-                break;
-            case "1":
-                holder.iv_select.setVisibility(View.VISIBLE);
-                holder.iv_select.setImageResource(R.drawable.cert_selected);
-                break;
-            case "2":
-                holder.iv_select.setVisibility(View.GONE);
-                break;
+        if(position == slectIndex){
+            holder.iv_select.setVisibility(View.VISIBLE);
+        }else{
+            holder.iv_select.setVisibility(View.GONE);
         }
-        holder.tv_card.setText(dataList.get(position).getCardName());
+        Map map = (Map) dataList.get(position);
+        String cardNo = map.get("cardNo").toString();
+        holder.tv_card.setText(map.get("bankName") +  " (" + cardNo.substring(cardNo.length() - 4) + " )");
+        holder.iv_icon.setBackgroundResource(getDrawableByCode(map.get("bankCode").toString()));
         return convertView;
     }
 
@@ -77,5 +74,44 @@ public class BankCardSelectAdapter extends BaseAdapter {
         ImageView iv_icon;
         TextView tv_card;
         ImageView iv_select;
+    }
+
+    private int getDrawableByCode(String bankCode){
+        switch (bankCode){
+            case "B005":
+                return R.drawable.icbc;
+            case "B008":
+                return R.drawable.abc;
+            case "B007":
+                return R.drawable.boc;
+            case "B013":
+                return R.drawable.ceb;
+            case "B012":
+                return R.drawable.ccb;
+            case "B019":
+                return R.drawable.cgb;
+            case "B021":
+                return R.drawable.pab;
+            case "B014":
+                return R.drawable.cmbc;
+            case "B006":
+                return R.drawable.cj;
+            case "B009":
+                return R.drawable.bcm;
+            case "B015":
+                return R.drawable.cib;
+            case "B010":
+                return R.drawable.cmb;
+            case "B017":
+                return R.drawable.spdm;
+            case "B016":
+                return R.drawable.hxm;
+            case "B011":
+                return R.drawable.psbc;
+            case "B020":
+                return R.drawable.bos;
+            default:
+                return R.drawable.icbc;
+        }
     }
 }

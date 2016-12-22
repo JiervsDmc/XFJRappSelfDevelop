@@ -8,14 +8,15 @@
         android:id="@+id/rl_add_card"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@color/app_white">
     <TextView
         android:id="@+id/tv_add_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="绑定新银行卡"
+        android:textSize="15sp"
         android:textColor="@color/app_blue_color"
         android:layout_centerInParent="true"
         />

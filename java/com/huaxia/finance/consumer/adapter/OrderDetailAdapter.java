@@ -24,15 +24,8 @@ public class OrderDetailAdapter extends BaseAdapter {
     private ViewHolder viewHolder;
     private List list;
     private OnItemPay itemPayListener;
-    private int clickPosition;
-    private boolean setClickPostion;
     public interface OnItemPay{
-        void payOnline(int clickPositon,int position);
-    }
-    private void setClickPosition(int position){
-        if(!setClickPostion){
-            clickPosition = position;
-        }
+        void payOnline(int position);
     }
     public OrderDetailAdapter(Activity avtivity, List list, OnItemPay listener){
         this.mActivity=avtivity;
@@ -78,12 +71,14 @@ public class OrderDetailAdapter extends BaseAdapter {
                 viewHolder.llReductionPrice=(LinearLayout)convertView.findViewById(R.id.ll_reduction_price);
                 viewHolder.tvReductionPrice=(TextView)convertView.findViewById(R.id.tv_reduction_price);
                 viewHolder.tv_repay_title=(TextView)convertView.findViewById(R.id.tv_repay_title);
+                viewHolder.tv_cannt_pay=(TextView)convertView.findViewById(R.id.tv_cannt_pay);
+                viewHolder.rl_replay_time=(RelativeLayout) convertView.findViewById(R.id.rl_replay_time);
                 convertView.setTag(viewHolder);
             }else {
                 viewHolder= (ViewHolder) convertView.getTag();
             }
         for (int i=position;i<list.size();i++){
-            Map map=(Map)list.get(i);
+            final Map map=(Map)list.get(i);
             if(map.get("seqid").equals("0")) {
                 viewHolder.tvNumberPeriods.setText("一次性服务费");
                 viewHolder.tvPeriodsprice.setText(map.get("payinteamt").toString()+"元");
@@ -95,6 +90,7 @@ public class OrderDetailAdapter extends BaseAdapter {
                     viewHolder.view1.setVisibility(View.VISIBLE);
                 if(map.get("status").toString().equals("010")||map.get("status").toString().equals("050")) {
                     viewHolder.tv_repay_title.setVisibility(View.GONE);
+                    viewHolder.tv_cannt_pay.setVisibility(View.GONE);
                     viewHolder.tvRepaymentState.setText("已还清");
                     viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_pass_color));
                     viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg_null);
@@ -102,21 +98,27 @@ public class OrderDetailAdapter extends BaseAdapter {
                     viewHolder.tvRepaymentTime.setText(map.get("finishdate").toString());
                     viewHolder.tvRepaymentTime.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
                 }else {
-                    setClickPosition(position);
-                    setClickPostion = true;
                     viewHolder.tv_repay_title.setVisibility(View.VISIBLE);
                     viewHolder.tvRepaymentState.setText("在线还款");
                     viewHolder.tvRepaymentTime.setText(map.get("paydate").toString().replace("/","-"));
                     viewHolder.tvRepaymentTime.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
-                    viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
-                    viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);
-                    viewHolder.tvRepaymentState.setClickable(true);
-                    viewHolder.tvRepaymentState.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            itemPayListener.payOnline(clickPosition,position);
-                        }
-                    });
+                    if(map.get("mayRepay").toString().equals("0") ){
+                        viewHolder.tv_cannt_pay.setVisibility(View.GONE);
+                        viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
+                        viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);
+                        viewHolder.tvRepaymentState.setClickable(true);
+                            viewHolder.tvRepaymentState.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    itemPayListener.payOnline(position);
+                                }
+                            });
+                    }else{
+                        viewHolder.tv_cannt_pay.setVisibility(View.VISIBLE);
+                        viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_line));
+                        viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_dsiable_bg);
+                        viewHolder.tvRepaymentState.setClickable(false);
+                    }
                 }}
                 viewHolder.view.setVisibility(View.GONE);
                 viewHolder.llAdvancePrice.setVisibility(View.GONE);
@@ -130,6 +132,7 @@ public class OrderDetailAdapter extends BaseAdapter {
                 viewHolder.tvPeriodsprice.setText(map.get("payamt").toString()+"元");
                 if(map.get("status").toString().equals("010")||map.get("status").toString().equals("050")) {
                     viewHolder.tv_repay_title.setVisibility(View.GONE);
+                    viewHolder.tv_cannt_pay.setVisibility(View.GONE);
                     viewHolder.llOtherPrice.setVisibility(View.VISIBLE);
                     viewHolder.tvRepaymentState.setText("已还清");
                     viewHolder.tvRepaymentTime.setText(map.get("finishdate").toString());
@@ -173,21 +176,27 @@ public class OrderDetailAdapter extends BaseAdapter {
                         viewHolder.tvReductionPrice.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
                     }
                 }else {
-                    setClickPosition(position);
-                    setClickPostion = true;
                     viewHolder.tv_repay_title.setVisibility(View.VISIBLE);
                     viewHolder.tvRepaymentState.setText("在线还款");
                     viewHolder.tvRepaymentTime.setText(map.get("paydate").toString().replace("/","-"));
                     viewHolder.tvRepaymentTime.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
-                    viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
-                    viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);
-                    viewHolder.tvRepaymentState.setClickable(true);
-                    viewHolder.tvRepaymentState.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            itemPayListener.payOnline(clickPosition,position);
-                        }
-                    });
+                    if(map.get("mayRepay").toString().equals("0")){
+                        viewHolder.tv_cannt_pay.setVisibility(View.GONE);
+                        viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
+                        viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);
+                        viewHolder.tvRepaymentState.setClickable(true);
+                            viewHolder.tvRepaymentState.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    itemPayListener.payOnline(position);
+                                }
+                            });
+                    }else{
+                        viewHolder.tv_cannt_pay.setVisibility(View.VISIBLE);
+                        viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_line));
+                        viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_dsiable_bg);
+                        viewHolder.tvRepaymentState.setClickable(false);
+                    }
                     //String s=String.valueOf(new BigDecimal(map.get("actualpaycorpusamt").toString()).add(new BigDecimal(map.get("actualpayinteamt").toString())).add(new BigDecimal(map.get("actualfineamt").toString())).setScale(2, BigDecimal.ROUND_HALF_UP));
                     if(Double.parseDouble(map.get("actualpayamt").toString())==0) {
                         viewHolder.llOtherPrice.setVisibility(View.GONE);
@@ -254,5 +263,7 @@ public class OrderDetailAdapter extends BaseAdapter {
         LinearLayout llReductionPrice;
         TextView tvReductionPrice;
         TextView tv_repay_title;
+        TextView tv_cannt_pay;
+        RelativeLayout rl_replay_time;
     }
 }

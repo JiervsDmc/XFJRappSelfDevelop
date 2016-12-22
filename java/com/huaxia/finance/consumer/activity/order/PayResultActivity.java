@@ -1,6 +1,8 @@
 package com.huaxia.finance.consumer.activity.order;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,8 +19,8 @@ public class PayResultActivity extends BaseActivity {
     TextView tv_show_detail;
     @ViewInject(R.id.iv_pay_result)
     ImageView iv_pay_result;
-    private String payResult;
-
+    private String tradeStatus;
+    Handler mHandler = new Handler();
     @Override
     protected int getLayout() {
         return R.layout.activity_pay_result;
@@ -32,39 +34,61 @@ public class PayResultActivity extends BaseActivity {
     @Override
     protected void setup() {
         super.setup();
-        payResult = "2";
-        switch (payResult){
-            case "0":
+        tradeStatus = getIntent().getStringExtra("tradeStatus");
+        switch (tradeStatus){
+            case "6":
                 tv_result.setText("支付结果银行处理中！");
                 tv_show_detail.setText("查看我的还款计划表");
-                iv_pay_result.setImageResource(R.drawable.ordersuccess);
+                iv_pay_result.setImageResource(R.drawable.pay_result_process);
+                endThisActivity(OrderDetailActivity.class);
                 break;
             case "1":
                 tv_result.setText("恭喜您，在线还款成功！");
                 tv_show_detail.setText("查看我的还款计划表");
-                iv_pay_result.setImageResource(R.drawable.ordersuccess);
+                iv_pay_result.setImageResource(R.drawable.pay_result_succ);
+                endThisActivity(OrderDetailActivity.class);
                 break;
             case "2":
                 tv_result.setText("很抱歉，支付失败！");
                 tv_show_detail.setText("请点此重新支付");
-                iv_pay_result.setImageResource(R.drawable.ordersuccess);
+                iv_pay_result.setImageResource(R.drawable.pay_result_faild);
+                endThisActivity(PayActivity.class);
                 break;
         }
     }
 
+    private void endThisActivity(final Class clazz){
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(PayResultActivity.this,clazz);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        },5000);
+    }
     @OnClick(R.id.tv_show_detail)
     public void tv_show_detail(View view) {
         Intent intent = null;
-        switch (payResult){
-            case "0":
+        switch (tradeStatus){
             case "1":
+            case "6":
                 intent = new Intent(PayResultActivity.this, OrderDetailActivity.class);
                 break;
             case "2":
                 intent = new Intent(PayResultActivity.this, PayActivity.class);
                 break;
+            default:
+                toast("网络繁忙");
+                return;
         }
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        mHandler.removeCallbacksAndMessages(null);
+        super.onDestroy();
     }
 }

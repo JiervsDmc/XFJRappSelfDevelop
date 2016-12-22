@@ -468,7 +468,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="审批通过后T+1日从绑定银行卡中扣取"
+                android:text="审批通过后当天从绑定银行卡中扣取！"
                 android:textColor="@color/app_red"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp"

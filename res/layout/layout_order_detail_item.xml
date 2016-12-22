@@ -218,7 +218,7 @@
         <RelativeLayout
             android:id="@+id/ll_replay"
             android:layout_width="match_parent"
-            android:layout_height="44dp">
+            android:layout_height="55dp">
 
             <RelativeLayout
                 android:id="@+id/rl_replay_time"
@@ -236,16 +236,6 @@
                     android:textSize="@dimen/submit_font" />
 
                 <TextView
-                    android:id="@+id/tv_repay_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_repayday_title"
-                    android:layout_marginLeft="15dp"
-                    android:text="待还款"
-                    android:textColor="#FFAE00"
-                    android:visibility="gone" />
-
-                <TextView
                     android:id="@+id/tv_repayment_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -254,6 +244,28 @@
                     android:text=""
                     android:textColor="@color/text_contact_color"
                     android:textSize="@dimen/submit_font" />
+
+                <TextView
+                    android:id="@+id/tv_repay_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_repayment_time"
+                    android:layout_marginLeft="15dp"
+                    android:text="待还款"
+                    android:textSize="@dimen/submit_font"
+                    android:textColor="@color/app_theme_color"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_cannt_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/text_contact_color"
+                    android:textSize="@dimen/submit_font"
+                    android:layout_below="@+id/tv_repayday_title"
+                    android:text="只有还款日当天才能在线还款"
+                    android:visibility="gone"/>
             </RelativeLayout>
 
             <TextView

@@ -5,21 +5,21 @@
     android:background="@color/app_white">
     <ImageView
         android:id="@+id/iv_icon"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/boc"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/boc"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp"/>
+        android:layout_marginLeft="@dimen/margin_left1"/>
     <TextView
         android:id="@+id/tv_card"
         android:layout_height="44dp"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/margin_left1"
-        android:textColor="@color/text_hint_color"
+        android:textSize="@dimen/submit_font"
+        android:textColor="@color/text_black_color"
         android:gravity="center_vertical"
-        android:layout_marginLeft="@dimen/margin_left1"
+        android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/iv_icon"
-        android:text="建设银行(6220)"/>
+        android:text=""/>
 
     <ImageView
         android:id="@+id/iv_select"
@@ -27,9 +27,8 @@
         android:layout_height="12dp"
         android:src="@drawable/cert_selected"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="5dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/margin_left1"
         android:visibility="gone"
         />
 </RelativeLayout>

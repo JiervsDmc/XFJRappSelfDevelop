@@ -74,7 +74,8 @@ public class FreelanceAttachmentUploadActivity extends BaseActivity implements F
     private String imageType;
     private String number;
     private static final int ALLCALL = 0100;
-    //定位纬经度
+    //定位返回码
+    private int returnCode;
     //定位纬经度
     private String gpsCode;
     public LocationClient mLocationClient = null;
@@ -402,7 +403,11 @@ public class FreelanceAttachmentUploadActivity extends BaseActivity implements F
         Map<String, Object> map = new HashMap<>();
         map.put("userUuid", mgr.getVal(UniqueKey.APP_USER_ID));
         map.put("orderNo", orderNo);
-        map.put("gpsCode",gpsCode);
+        if ((returnCode==61 || returnCode==161) && !gpsCode.equals("")&& gpsCode!=null) {
+            map.put("gpsCode",gpsCode);
+        }else {
+            map.put("gpsCode","-1.0,-1.0");
+        }
         if (!IsNullUtils.isNull(ContactInfoData.list)) {
             map.put("pullInfo", ContactInfoData.list);
         }
@@ -477,6 +482,7 @@ public class FreelanceAttachmentUploadActivity extends BaseActivity implements F
         @Override
         public void onReceiveLocation(BDLocation location) {
             StringBuilder sb = new StringBuilder();
+            returnCode = location.getLocType();
             gpsCode = sb.append(location.getLongitude()).append(",").append(location.getLatitude()).toString();
         }
     }

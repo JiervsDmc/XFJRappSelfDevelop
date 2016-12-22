@@ -16,7 +16,7 @@
     <string name="shoufu_title">上传材料：首次支付凭证</string>
     <string name="other_title">上传材料：手术通知单、订购单</string>
     <string name="default_title">其他凭证</string>
-    <string name="bankcard_add">重要提示：提前还款需要绑定银行卡验证银行账号信息，只能绑定自己名下的银行卡，请填写正确的信息。</string>
+    <string name="bankcard_add">重要提示：在线还款需要绑定银行卡验证银行账号信息，只能绑定自己名下的银行卡，请填写正确的信息。</string>
     <string-array name="marital_status">
         <item>已婚</item>
         <item>未婚</item>
@@ -86,5 +86,23 @@
         <item>招商银行</item>
         <item>上海浦东发展银行</item>
         <item>华夏银行</item>
+    </string-array>
+    <string-array name="pay_bank_card_name">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
+        <item>中国银行</item>
+        <item>中国光大银行</item>
+        <item>中信银行</item>
+        <item>广东发展银行</item>
+        <item>平安银行</item>
+        <item>中国民生银行</item>
+        <item>中国建设银行</item>
+        <item>交通银行</item>
+        <item>兴业银行</item>
+        <item>招商银行</item>
+        <item>上海浦东发展银行</item>
+        <item>华夏银行</item>
+        <item>中国邮储储蓄银行</item>
+        <item>上海银行</item>
     </string-array>
 </resources>
