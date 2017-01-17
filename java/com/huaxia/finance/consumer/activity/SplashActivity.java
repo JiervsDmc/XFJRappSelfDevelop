@@ -211,10 +211,10 @@ public class SplashActivity extends Activity {
 
                 if(mgr.getVal(UniqueKey.APP_MOBILE)!=null&&mgr.getVal(UniqueKey.TOKEN)!=null&&mgr.getVal(UniqueKey.SESSION)!=null&&mgr.getVal(UniqueKey.ROLE)!=null) {
                     String acounnt = mgr.getVal(UniqueKey.APP_MOBILE);
-                    checkAccount(acounnt);
-//                   Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                   context.startActivity(intent);
-//                   (Activity) context).finish();
+                   // checkAccount(acounnt);
+                  Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                 context.startActivity(intent);
+                    ((Activity) context).finish();
                 }else {
                     Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                     context.startActivity(intent);

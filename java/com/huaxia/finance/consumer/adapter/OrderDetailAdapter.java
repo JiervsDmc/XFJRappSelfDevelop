@@ -102,7 +102,7 @@ public class OrderDetailAdapter extends BaseAdapter {
                     viewHolder.tvRepaymentState.setText("在线还款");
                     viewHolder.tvRepaymentTime.setText(map.get("paydate").toString().replace("/","-"));
                     viewHolder.tvRepaymentTime.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
-                    if(map.get("mayRepay").toString().equals("0") ){
+                    if(map.get("mayRepay").toString().equals("0") ||map.get("mayRepay").toString().equals("2")){
                         viewHolder.tv_cannt_pay.setVisibility(View.GONE);
                         viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
                         viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);
@@ -128,6 +128,8 @@ public class OrderDetailAdapter extends BaseAdapter {
                 viewHolder.llOtherPrice.setVisibility(View.GONE);
                 break;
             }else {
+                viewHolder.view1.setVisibility(View.VISIBLE);
+                viewHolder.llReplay.setVisibility(View.VISIBLE);
                 viewHolder.tvNumberPeriods.setText(map.get("seqid").toString()+"/"+(list.size()-1)+"期");
                 viewHolder.tvPeriodsprice.setText(map.get("payamt").toString()+"元");
                 if(map.get("status").toString().equals("010")||map.get("status").toString().equals("050")) {
@@ -180,7 +182,7 @@ public class OrderDetailAdapter extends BaseAdapter {
                     viewHolder.tvRepaymentState.setText("在线还款");
                     viewHolder.tvRepaymentTime.setText(map.get("paydate").toString().replace("/","-"));
                     viewHolder.tvRepaymentTime.setTextColor(mActivity.getResources().getColor(R.color.app_hint_text_color));
-                    if(map.get("mayRepay").toString().equals("0")){
+                    if(map.get("mayRepay").toString().equals("0")||map.get("mayRepay").toString().equals("2")){
                         viewHolder.tv_cannt_pay.setVisibility(View.GONE);
                         viewHolder.tvRepaymentState.setTextColor(mActivity.getResources().getColor(R.color.app_blue_color));
                         viewHolder.tvRepaymentState.setBackgroundResource(R.drawable.pay_bg);

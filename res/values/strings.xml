@@ -7,7 +7,7 @@
     <string name="bankcard_reminder">重要提示：此卡用于在指定还款日系统代扣每期应还金额，请您选择您日常使用的银行卡。</string>
     <string name="contact_reminder">选择联系人后请修改真实姓名</string>
     <string name="SMS_important_inform">吉林电信客户请使用本机发送CXXD至10001获取短信验证码</string>
-    <string name="cert_title">至少上传一项：二代身份证正反面、手持身份证自拍照、临时身份证+户口本、临时身份证+驾驶证</string>
+    <string name="cert_title">至少上传一项：二代身份证正反面+手持身份证自拍照、临时身份证+户口本、临时身份证+驾驶证</string>
     <string name="student_title">至少上传一项：学生证、校园一卡通、学信网</string>
     <string name="work_title">上传材料：工牌、劳动合同、单位开具的工作证明、营业执照</string>
     <string name="finance_title">上传材料：房产资料、车产资料、保单、理财证明</string>
@@ -102,7 +102,7 @@
         <item>招商银行</item>
         <item>上海浦东发展银行</item>
         <item>华夏银行</item>
-        <item>中国邮储储蓄银行</item>
+        <item>中国邮政储蓄银行</item>
         <item>上海银行</item>
     </string-array>
 </resources>

@@ -117,11 +117,11 @@ public class BankCardInfoSecondActivity extends BaseActivity implements View.OnC
                 startActivity(intent);
                 break;
             case R.id.update_card1:
-                intent = new Intent(this, BankCardInfoActivity.class);
+                intent = new Intent(this, BankCardBfInfoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.update_card2:
-                intent = new Intent(this, BankCardInfoActivity.class);
+                intent = new Intent(this, BankCardBfInfoActivity.class);
                 startActivity(intent);
                 break;
         }

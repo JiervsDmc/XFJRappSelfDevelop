@@ -1,22 +1,18 @@
 package com.huaxia.finance.consumer.activity;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.TextView;
 
 import com.huaxia.finance.consumer.R;
-import com.huaxia.finance.consumer.adapter.RepayRecordAdapter;
 import com.huaxia.finance.consumer.base.BaseActivity;
 import com.huaxia.finance.consumer.http.ApiCaller;
 import com.huaxia.finance.consumer.storage.Constant;
 import com.huaxia.finance.consumer.storage.UniqueKey;
-import com.huaxia.finance.consumer.util.LogUtil;
+import com.huaxia.finance.consumer.util.ConvertUtils;
 import com.huaxia.finance.consumer.util.ToastUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,17 +79,20 @@ public class RepayDetailActivity extends BaseActivity {
                 super.onResponse(response, id);
                 if(head.getResponseCode().contains("0000")) {
                     HashMap detailMap = (HashMap) body.get("record");
-                    String repayMoney = detailMap.get("repayMoney").toString();
+                    String repayMoney = ConvertUtils.mapToString(detailMap,"repayMoney");
                     tv_detail_price.setText(new BigDecimal(repayMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
-                    tv_project_info.setText(detailMap.get("productName").toString());
-                    tv_create_time.setText(detailMap.get("createdAt").toString());
-                    String cardNo = detailMap.get("cardNo").toString();
-                    String tailNumber = cardNo.substring(cardNo.length()-4,cardNo.length());
-                    tv_repay_bank.setText(detailMap.get("bankName").toString()+" ("+tailNumber+")");
-                    order_no.setText(detailMap.get("orderNo").toString());
-                    serial_no.setText(detailMap.get("flowNo").toString());
-                    tv_repay_time.setText(detailMap.get("payTime").toString());
-                    setRepayResult(detailMap.get("repayStatus").toString());
+                    tv_project_info.setText(ConvertUtils.mapToString(detailMap,"productName"));
+                    tv_create_time.setText(ConvertUtils.mapToString(detailMap,"createdAt"));
+                    String cardNo = ConvertUtils.mapToString(detailMap,"cardNo");
+                    String tailNumber = null;
+                    if (cardNo.length()>=4) {
+                     tailNumber = cardNo.substring(cardNo.length()-4,cardNo.length());
+                    }
+                    tv_repay_bank.setText(ConvertUtils.mapToString(detailMap,"bankName")+" ("+tailNumber+")");
+                    order_no.setText(ConvertUtils.mapToString(detailMap,"orderNo"));
+                    serial_no.setText(ConvertUtils.mapToString(detailMap,"flowNo"));
+                    tv_repay_time.setText(ConvertUtils.mapToString(detailMap,"payTime"));
+                    setRepayResult(ConvertUtils.mapToString(detailMap,"repayStatus"));
                 }else {
                     ToastUtils.showSafeToast(RepayDetailActivity.this,head.getResponseMsg());
                 }

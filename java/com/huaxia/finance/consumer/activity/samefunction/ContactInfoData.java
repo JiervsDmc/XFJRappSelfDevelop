@@ -10,6 +10,7 @@ import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.Data;
 
 import com.huaxia.finance.consumer.util.IsNullUtils;
+import com.huaxia.finance.consumer.util.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,9 +57,15 @@ public class ContactInfoData {
                             if (map.get("email").toString().endsWith("&")) {
                                 map.put("email", map.get("email").toString().substring(0, map.get("email").toString().length() - 1));
                             }
-                            if (map.get("address").toString().endsWith("&")) {
-                                map.put("address", map.get("address").toString().substring(0, map.get("address").toString().length() - 1));
+                            //适配部分手机显示省市为空
+                            String addre = map.get("address").toString();
+                            if (addre.endsWith("&")) {
+                                addre = addre.substring(0, map.get("address").toString().length() - 1);
                             }
+                            if (addre.contains("null")) {
+                                addre = addre.replaceAll("null", "");
+                            }
+                            map.put("address", addre);
                             list.add(map);
                         }
                         emailStr = new String();
@@ -72,9 +79,9 @@ public class ContactInfoData {
                     // 获得通讯录中每个联系人的ID
                     // 获得通讯录中联系人的名字
                     if (StructuredName.CONTENT_ITEM_TYPE.equals(mimetype)) {
-                        nameStr =  cursor.getString(cursor.getColumnIndex(StructuredName.DISPLAY_NAME));
+                        nameStr = cursor.getString(cursor.getColumnIndex(StructuredName.DISPLAY_NAME));
                     }
-                    map.put("name", nameStr);
+                    map.put("name", Utils.fixName(nameStr));
                     // 获取电话信息
                     if (Phone.CONTENT_ITEM_TYPE.equals(mimetype)) {
                         // 取出电话类型
@@ -132,15 +139,22 @@ public class ContactInfoData {
                                 cursor.getString(cursor.getColumnIndex(StructuredPostal.CITY)) +
                                 cursor.getString(cursor.getColumnIndex(StructuredPostal.STREET)) + "&";
                     }
+
                     map.put("address", addressStr);
                 }
                 if (!IsNullUtils.isNull(map) && !map.isEmpty()) {
                     if (map.get("email").toString().endsWith("&")) {
                         map.put("email", map.get("email").toString().substring(0, map.get("email").toString().length() - 1));
                     }
-                    if (map.get("address").toString().endsWith("&")) {
-                        map.put("address", map.get("address").toString().substring(0, map.get("address").toString().length() - 1));
+                    String addre = map.get("address").toString();
+                    //适配部分手机显示省市为空
+                    if (addre.endsWith("&")) {
+                        addre = addre.substring(0, map.get("address").toString().length() - 1);
                     }
+                    if (addre.contains("null")) {
+                        addre = addre.replaceAll("null", "");
+                    }
+                    map.put("address", addre);
                     list.add(map);
                 }
                 cursor.close();

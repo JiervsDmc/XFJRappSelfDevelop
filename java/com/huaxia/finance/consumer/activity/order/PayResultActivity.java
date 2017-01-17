@@ -40,21 +40,19 @@ public class PayResultActivity extends BaseActivity {
                 tv_result.setText("支付结果银行处理中！");
                 tv_show_detail.setText("查看我的还款计划表");
                 iv_pay_result.setImageResource(R.drawable.pay_result_process);
-                endThisActivity(OrderDetailActivity.class);
                 break;
             case "1":
                 tv_result.setText("恭喜您，在线还款成功！");
                 tv_show_detail.setText("查看我的还款计划表");
                 iv_pay_result.setImageResource(R.drawable.pay_result_succ);
-                endThisActivity(OrderDetailActivity.class);
                 break;
             case "2":
                 tv_result.setText("很抱歉，支付失败！");
                 tv_show_detail.setText("请点此重新支付");
                 iv_pay_result.setImageResource(R.drawable.pay_result_faild);
-                endThisActivity(PayActivity.class);
                 break;
         }
+        endThisActivity(OrderDetailActivity.class);
     }
 
     private void endThisActivity(final Class clazz){
@@ -69,19 +67,7 @@ public class PayResultActivity extends BaseActivity {
     }
     @OnClick(R.id.tv_show_detail)
     public void tv_show_detail(View view) {
-        Intent intent = null;
-        switch (tradeStatus){
-            case "1":
-            case "6":
-                intent = new Intent(PayResultActivity.this, OrderDetailActivity.class);
-                break;
-            case "2":
-                intent = new Intent(PayResultActivity.this, PayActivity.class);
-                break;
-            default:
-                toast("网络繁忙");
-                return;
-        }
+        Intent intent = new Intent(PayResultActivity.this, OrderDetailActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }

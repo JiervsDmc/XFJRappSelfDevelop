@@ -352,10 +352,10 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
                     if (bankFlag.equals("1")) {
                         intent.setClass(UserInfoActivity.this, BankCardInfoSecondActivity.class);
                     } else if (bankFlag.equals("0")) {
-                        intent.setClass(UserInfoActivity.this, BankCardInfoActivity.class);
+                        intent.setClass(UserInfoActivity.this, BankCardBfInfoActivity.class);
                     }
                 } else {
-                    intent.setClass(UserInfoActivity.this, BankCardInfoActivity.class);
+                    intent.setClass(UserInfoActivity.this, BankCardBfInfoActivity.class);
                 }
                 startActivity(intent);
                 break;

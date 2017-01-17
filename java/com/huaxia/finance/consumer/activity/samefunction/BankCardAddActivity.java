@@ -153,7 +153,7 @@ public class BankCardAddActivity extends BaseActivity implements ListViewDialog.
 
     @OnClick(R.id.et_bank_name)
     public void et_bank_name(View view) {
-        listViewDialog.show("银行名称", getResources().getStringArray(R.array.bank_card_name));
+        listViewDialog.show("银行名称", getResources().getStringArray(R.array.pay_bank_card_name));
     }
 
     @OnClick(R.id.bank_card_btn)

@@ -7,7 +7,7 @@
         android:id="@+id/iv_icon"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:background="@drawable/boc"
+        android:background="@drawable/mycard_icon"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/margin_left1"/>
     <TextView
@@ -28,7 +28,5 @@
         android:src="@drawable/cert_selected"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/margin_left1"
-        android:visibility="gone"
-        />
+        android:layout_marginRight="@dimen/margin_left1"/>
 </RelativeLayout>

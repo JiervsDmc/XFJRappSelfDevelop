@@ -128,7 +128,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/iv_icon"
                 android:gravity="center_vertical"
-                android:text="您还未绑定银行卡，请点击绑定"
+                android:text="您还未绑定银行卡"
                 android:textColor="@color/text_black_color"
                 android:textSize="16sp" />
 

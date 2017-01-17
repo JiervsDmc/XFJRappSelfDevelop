@@ -44,11 +44,11 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.RegistActivity"
@@ -138,9 +138,15 @@
         <activity android:name=".activity.samefunction.QueryPasswordActivity" />
         <activity android:name=".activity.CaptureActivity" />
         <activity android:name=".activity.protocol.AddLoanProtocolActivity" />
-        <activity android:name=".activity.RepayOnlineRecordActivity" />
-        <activity android:name=".activity.RepayDetailActivity" />
-        <activity android:name=".activity.samefunction.BankCard3Activity" />
+        <activity
+            android:name=".activity.RepayOnlineRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RepayDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.samefunction.BankCard3Activity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.UploadCertificationActivity"
             android:screenOrientation="portrait" />
@@ -150,11 +156,19 @@
         <activity
             android:name=".activity.freelance.FreelanceAttachmentInfoActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.order.PayActivity"/>
+        <activity
+            android:name=".activity.order.PayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.samefunction.BankCardAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.order.PayResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.samefunction.BankCardBfInfoActivity"
+            android:screenOrientation="portrait" />
 
-
-        <activity android:name=".activity.samefunction.BankCardAddActivity"/> >
-        <activity android:name=".activity.order.PayResultActivity" />
         <!-- 友盟 -->
         <meta-data
             android:name="UMENG_APPKEY"

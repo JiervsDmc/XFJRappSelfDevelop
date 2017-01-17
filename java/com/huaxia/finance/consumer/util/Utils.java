@@ -25,6 +25,8 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.Date;
@@ -45,7 +47,9 @@ public class Utils {
     public static final String EXTRA_MESSAGE = "message";
 
     public static String logStringCache = "";
-
+    //校验合格字符数组
+    public static final String STANDARDNAME=
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@&+.-, ~!%*()#";
     // 获取ApiKey
     public static String getMetaValue(Context context, String metaKey) {
         Bundle metaData = null;
@@ -363,5 +367,36 @@ public class Utils {
         }
         lastClickTime = time;
         return false;
+    }
+
+
+    /**
+     * 修正不呼和格式的姓名
+     * @param name
+     * @return
+     */
+    public static String fixName(String name) {
+        String fixName = "";
+        String letter;
+        if (name != null) {
+            char[] namechars = name.trim().toCharArray();
+            for (int i=0;i<namechars.length;i++) {
+                StringBuilder builder = new StringBuilder();
+                letter = builder.append(namechars[i]).toString();
+                Pattern pattern = Pattern.compile("[\\u4e00-\\u9fa5]+");
+                Matcher m = pattern.matcher(letter);
+                if(m.find()&&m.group(0).equals(letter)){
+                    //该字符为一个汉字，不作处理
+                }else {
+                    if (!STANDARDNAME.contains(letter)) {
+                        //如果该字符不是可用字符，则转成""
+                        namechars[i] = ' ';
+                    }
+                }
+            }
+            fixName = String.valueOf(namechars);
+            fixName = fixName.replaceAll(" ","");
+        }
+        return fixName;
     }
 }

@@ -29,6 +29,7 @@ import com.huaxia.finance.consumer.util.IsNullUtils;
 import com.huaxia.finance.consumer.util.ListViewDialog;
 import com.huaxia.finance.consumer.util.LogUtil;
 import com.huaxia.finance.consumer.util.RegularExpressionUtil;
+import com.huaxia.finance.consumer.util.Utils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
@@ -47,8 +48,8 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
     public static final int FAMILYPHO = 0x135;
     public static final int OTHERPHO = 0x125;
     //校验合格字符数组
-    public static final String STANDARDNAME=
-            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@&+.-, ~!%*()#";
+   /* public static final String STANDARDNAME=
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@&+.-, ~!%*()#";*/
 
     @ViewInject(R.id.add_relationship)
     private TextView addRelationship;
@@ -267,7 +268,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                         } else if (role.equals("01") || role.equals("02")) {//同事
                             setContactName("06", updateName.getText().toString());
                         }
-                        relationshioName.setText(fixName(updateName.getText().toString()));
+                        relationshioName.setText(Utils.fixName(updateName.getText().toString()));
                         break;
                     case FAMILYPHO:
                         switch (familyRS.getText().toString()) {
@@ -287,11 +288,11 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                                 setContactName("04", updateName.getText().toString());
                                 break;
                         }
-                        familyName.setText(fixName(updateName.getText().toString()));
+                        familyName.setText(Utils.fixName(updateName.getText().toString()));
                         break;
                     case OTHERPHO:
                         setContactName("07", updateName.getText().toString());
-                        otherName.setText(fixName(updateName.getText().toString()));
+                        otherName.setText(Utils.fixName(updateName.getText().toString()));
                         break;
                 }
                 upadateNameDialog.dismiss();
@@ -403,19 +404,19 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                     case RELATIONSHIP:
                         if (role.equals("03")) {
                             //setContactView(requestCode, "05", contact.get(0), contact.get(1), "", tongxueID);
-                            setContactView(requestCode, "05", contact.get(0), phoneNum, "", tongxueID);
+                            setContactView(requestCode, "05", Utils.fixName(contact.get(0)), phoneNum, "", tongxueID);
                         } else if (role.equals("01") || role.equals("02")) {
                             //setContactView(requestCode, "06", contact.get(0), contact.get(1), "", tongshiID);
-                            setContactView(requestCode, "06", contact.get(0), phoneNum, "", tongshiID);
+                            setContactView(requestCode, "06", Utils.fixName(contact.get(0)), phoneNum, "", tongshiID);
                         }
                         break;
                     case FAMILYPHO:
                         //setContactView(requestCode, "01", contact.get(0), contact.get(1), "父亲", familyID);
-                        setContactView(requestCode, "01", contact.get(0), phoneNum, "父亲", familyID);
+                        setContactView(requestCode, "01", Utils.fixName(contact.get(0)), phoneNum, "父亲", familyID);
                         break;
                     case OTHERPHO:
                         //setContactView(requestCode, "07", contact.get(0), contact.get(1), "", frindID);
-                        setContactView(requestCode, "07", contact.get(0), phoneNum, "", frindID);
+                        setContactView(requestCode, "07", Utils.fixName(contact.get(0)), phoneNum, "", frindID);
                         break;
                 }
 
@@ -459,19 +460,19 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                         case RELATIONSHIP:
                             if (role.equals("03")) {
                                 //setContactView(requestCode, "05", contact.get(0), numberTV.getText().toString(), "", tongxueID);
-                                setContactView(requestCode, "05", contact.get(0),phoneNum, "", tongxueID);
+                                setContactView(requestCode, "05", Utils.fixName(contact.get(0)),phoneNum, "", tongxueID);
                             } else if (role.equals("02") || role.equals("01")) {
                                 //setContactView(requestCode, "06", contact.get(0), numberTV.getText().toString(), "", tongshiID);
-                                setContactView(requestCode, "06", contact.get(0), phoneNum, "", tongshiID);
+                                setContactView(requestCode, "06", Utils.fixName(contact.get(0)), phoneNum, "", tongshiID);
                             }
                             break;
                         case FAMILYPHO:
                             //setContactView(requestCode, "01", contact.get(0), numberTV.getText().toString(), "父亲", familyID);
-                            setContactView(requestCode, "01", contact.get(0), phoneNum, "父亲", familyID);
+                            setContactView(requestCode, "01", Utils.fixName(contact.get(0)), phoneNum, "父亲", familyID);
                             break;
                         case OTHERPHO:
                            // setContactView(requestCode, "07", contact.get(0),numberTV.getText().toString(), "", frindID);
-                            setContactView(requestCode, "07", contact.get(0),phoneNum, "", frindID);
+                            setContactView(requestCode, "07", Utils.fixName(contact.get(0)),phoneNum, "", frindID);
                             break;
                     }
                     dialog.dismiss();
@@ -499,11 +500,17 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
         sure.setOnClickListener(this);
         if(name.length()>20){
             String newName=name.trim().substring(0,20);
+            //String newNames=fixName(newName);
             updateName.setText(newName);
+            //updateName.setText(newNames);
             updateName.setSelection(newName.length());
+            //updateName.setSelection(newNames.length());
         }else {
+           // String newNames=fixName(name);
             updateName.setText(name);
             updateName.setSelection(name.length());
+           /* updateName.setText(newNames);
+            updateName.setSelection(newNames.length());*/
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
@@ -523,7 +530,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
         for (int i = 0; i < oldDate.size(); i++) {
             Map map = (Map) oldDate.get(i);
             if (map.get("type").equals(type)) {
-                map.put("name", updateName);
+                map.put("name", Utils.fixName(updateName));
                 oldDate.set(i, map);
             }
         }
@@ -534,8 +541,8 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
         if (oldDate.size() <= 0) {
             Map map = new HashMap();
             map.put("id", "");
-            map.put("name", fixName(name));
-            map.put("mobileContractName", contactName);
+            map.put("name",name);
+            map.put("mobileContractName",contactName);
             map.put("phoneNumber", pho);
             map.put("type", type);
             oldDate.add(map);
@@ -544,21 +551,21 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
             for (int i = 0; i < oldDate.size(); i++) {
                 Map map = (Map) oldDate.get(i);
                 if (map.get("id").equals(id)) {
-                    map.put("name", fixName(name));
+                    map.put("name", name);
                     map.put("mobileContractName", contactName);
                     map.put("phoneNumber", pho);
                     map.put("type", type);
                     oldDate.set(i, map);
                     break;
                 } else if (map.get("type").equals(type) && IsNullUtils.isNull("" + map.get("id"))) {
-                    map.put("name", fixName(name));
+                    map.put("name", name);
                     map.put("mobileContractName", contactName);
                     map.put("phoneNumber", pho);
                     map.put("type", type);
                     oldDate.set(i, map);
                 } else if ((type.equals("01") || type.equals("02") || type.equals("03")) && IsNullUtils.isNull("" + map.get("id"))) {
                     if (map.get("type").equals("01") || map.get("type").equals("02") || map.get("type").equals("03")) {
-                        map.put("name", fixName(name));
+                        map.put("name", name);
                         map.put("mobileContractName", contactName);
                         map.put("phoneNumber", pho);
                         map.put("type", type);
@@ -571,7 +578,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
             if (j == oldDate.size()) {
                 Map map = new HashMap();
                 map.put("id", "");
-                map.put("name", fixName(name));
+                map.put("name", name);
                 map.put("mobileContractName", contactName);
                 map.put("phoneNumber", pho);
                 map.put("type", type);
@@ -590,7 +597,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                     relationshioName.setVisibility(View.VISIBLE);
                     relationshioPho.setVisibility(View.VISIBLE);
                     relationshioPho.setText(phone);
-                    relationshioName.setText(fixName(name));
+                    relationshioName.setText(Utils.fixName(name));
                 } else if ((role.equals("02") || role.equals("01")) && type.equals("06")) {
                     setContactDate("06", name, name, phone, id);
                     addRelationship.setVisibility(View.GONE);
@@ -598,7 +605,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                     relationshioName.setVisibility(View.VISIBLE);
                     relationshioPho.setVisibility(View.VISIBLE);
                     relationshioPho.setText(phone);
-                    relationshioName.setText(fixName(name));
+                    relationshioName.setText(Utils.fixName(name));
                 }
                 break;
             case FAMILYPHO:
@@ -629,7 +636,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                 familyPho.setVisibility(View.VISIBLE);
                 familyName.setVisibility(View.VISIBLE);
                 familyPho.setText(phone);
-                familyName.setText(fixName(name));
+                familyName.setText(Utils.fixName(name));
                 break;
             case OTHERPHO:
                 setContactDate("07", name, name, phone, id);
@@ -638,7 +645,7 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
                 otherPho.setVisibility(View.VISIBLE);
                 otherName.setVisibility(View.VISIBLE);
                 otherPho.setText(phone);
-                otherName.setText(fixName(name));
+                otherName.setText(Utils.fixName(name));
                 break;
         }
     }
@@ -710,11 +717,11 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
-    /**
+/*    *//**
      * 修正不呼和格式的姓名
      * @param name
      * @return
-     */
+     *//*
     public String fixName(String name) {
         String fixName = "";
         String letter;
@@ -738,5 +745,5 @@ public class ContactInfoActivity extends BaseActivity implements View.OnClickLis
             fixName = fixName.replaceAll(" ","");
         }
         return fixName;
-    }
+    }*/
 }

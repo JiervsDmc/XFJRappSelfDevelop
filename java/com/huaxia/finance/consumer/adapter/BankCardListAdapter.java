@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.huaxia.finance.consumer.R;
+import com.huaxia.finance.consumer.util.ConvertUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,21 +61,22 @@ public class BankCardListAdapter extends BaseAdapter {
         //根据请求到的银行卡数据加载列表
         HashMap bankCardMap = (HashMap) list.get(position);
         if (bankCardMap!= null) {
-            viewHolder.tvBankName.setText(bankCardMap.get("bankName").toString());
+            viewHolder.tvBankName.setText(ConvertUtils.toString(bankCardMap.get("bankName")));
             viewHolder.tvXing.setVisibility(View.VISIBLE);
-            String cardNo = bankCardMap.get("cardNo").toString();
+            String cardNo = ConvertUtils.toString(bankCardMap.get("cardNo"));
             String TailNo = cardNo.substring(cardNo.length()-4,cardNo.length());
             viewHolder.bankNumber.setText(TailNo);
-            if (bankCardMap.get("bindType").toString().equals("BT02")) {
+            //根据需求不区分在线还款卡
+            /*if (ConvertUtils.toString(bankCardMap.get("bindType")).equals("BT02")) {
                 //民生绑定
                 viewHolder.isOnlineCard.setVisibility(View.VISIBLE);
-            }else {
+            }else if (ConvertUtils.toString(bankCardMap.get("bindType")).equals("BT01")){
                 //宝付绑定
                 viewHolder.isOnlineCard.setVisibility(View.GONE);
-            }
+            }*/
             viewHolder.llBank.setBackgroundResource(R.drawable.bank_red);
             viewHolder.isOnlineCard.setTextColor(mActivity.getResources().getColor(R.color.app_red));
-            setBankLogo(bankCardMap.get("bankName").toString());
+            setBankLogo(ConvertUtils.toString(bankCardMap.get("bankName")));
         }
         return convertView;
     }
@@ -102,8 +104,7 @@ public class BankCardListAdapter extends BaseAdapter {
             viewHolder.ivBank.setBackgroundResource(R.drawable.pab);
         }else if(bankName.contains("兴业银行")) {
             viewHolder.ivBank.setBackgroundResource(R.drawable.cib);
-        }
-        else if(bankName.contains("交通银行")) {
+        }else if(bankName.contains("交通银行")) {
             viewHolder.ivBank.setBackgroundResource(R.drawable.bcm);
         }else if(bankName.contains("华夏银行")) {
             viewHolder.ivBank.setBackgroundResource(R.drawable.hxm);
@@ -111,7 +112,7 @@ public class BankCardListAdapter extends BaseAdapter {
             viewHolder.ivBank.setBackgroundResource(R.drawable.spdm);
         }else if(bankName.contains("上海银行")) {
             viewHolder.ivBank.setBackgroundResource(R.drawable.bos);
-        }else if(bankName.contains("邮储银行")) {
+        }else if(bankName.contains("中国邮政储蓄银行")) {
             viewHolder.ivBank.setBackgroundResource(R.drawable.psbc);
         }
         return;

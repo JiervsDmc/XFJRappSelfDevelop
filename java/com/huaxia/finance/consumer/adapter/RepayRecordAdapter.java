@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huaxia.finance.consumer.R;
+import com.huaxia.finance.consumer.util.ConvertUtils;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -63,15 +64,18 @@ public class RepayRecordAdapter extends BaseAdapter {
         //根据得到的列表数据加载每一条支付记录
         recordMap = (HashMap) list.get(position);
         if (recordMap!= null) {
-            String bankName = recordMap.get("bankName").toString();
-            String cardNo = recordMap.get("cardNo").toString();
-            String tailNumber = cardNo.substring(cardNo.length()-4,cardNo.length());
+            String bankName = ConvertUtils.mapToString(recordMap,"bankName");
+            String cardNo = ConvertUtils.mapToString(recordMap,"cardNo");
+            String tailNumber = null;
+            if (cardNo.length()>=4) {
+                tailNumber = cardNo.substring(cardNo.length()-4,cardNo.length());
+            }
             viewHolder.tv_bank_tailNumber.setText(bankName+"("+tailNumber+")");
-            viewHolder.tv_repay_time.setText(recordMap.get("payTime").toString());
-            viewHolder.tv_project.setText(recordMap.get("productName").toString());
-            String repayMoney = recordMap.get("repayMoney").toString();
+            viewHolder.tv_repay_time.setText(ConvertUtils.mapToString(recordMap,"payTime"));
+            viewHolder.tv_project.setText(ConvertUtils.mapToString(recordMap,"productName"));
+            String repayMoney = ConvertUtils.mapToString(recordMap,"repayMoney");
             viewHolder.tv_online_price.setText("¥ "+new BigDecimal(repayMoney).setScale(2, BigDecimal.ROUND_HALF_UP).toString());
-            String repayResult = recordMap.get("repayStatus").toString();
+            String repayResult = ConvertUtils.toString(recordMap.get("repayStatus"));
             setRepayResult(repayResult);
             setBankLogo(bankName);
         }
@@ -110,10 +114,10 @@ public class RepayRecordAdapter extends BaseAdapter {
         }else if(bankName.contains("上海浦东发展银行")) {
             viewHolder.iv_bank_logo.setBackgroundResource(R.drawable.spdm);
         }else if(bankName.contains("上海银行")) {
-        viewHolder.iv_bank_logo.setBackgroundResource(R.drawable.bos);
-        }else if(bankName.contains("邮储银行")) {
-        viewHolder.iv_bank_logo.setBackgroundResource(R.drawable.psbc);
-    }
+            viewHolder.iv_bank_logo.setBackgroundResource(R.drawable.bos);
+        }else if(bankName.contains("中国邮政储蓄银行")) {
+            viewHolder.iv_bank_logo.setBackgroundResource(R.drawable.psbc);
+        }
         return;
     }
 

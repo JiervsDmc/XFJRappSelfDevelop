@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huaxia.finance.consumer.R;
+import com.huaxia.finance.consumer.util.ConvertUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,9 @@ import java.util.Map;
 public class BankCardSelectAdapter extends BaseAdapter {
     private Context mContext;
     List dataList = new ArrayList<>();
-    private int slectIndex;
-    public BankCardSelectAdapter(Context context, List list, int index) {
+    public BankCardSelectAdapter(Context context, List list) {
         mContext = context;
         dataList = list;
-        slectIndex = index;
-    }
-    public void setSelectIndex(int index){
-        slectIndex = index;
     }
     @Override
     public int getCount() {
@@ -58,15 +54,11 @@ public class BankCardSelectAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-        if(position == slectIndex){
-            holder.iv_select.setVisibility(View.VISIBLE);
-        }else{
-            holder.iv_select.setVisibility(View.GONE);
-        }
         Map map = (Map) dataList.get(position);
-        String cardNo = map.get("cardNo").toString();
-        holder.tv_card.setText(map.get("bankName") +  " (" + cardNo.substring(cardNo.length() - 4) + " )");
-        holder.iv_icon.setBackgroundResource(getDrawableByCode(map.get("bankCode").toString()));
+        String cardNo = ConvertUtils.mapToString(map,"cardNo");
+        String subCarNo = cardNo.length()>4?cardNo.substring(cardNo.length() - 4):cardNo;
+        holder.tv_card.setText(ConvertUtils.mapToString(map,"bankName") +  " (" + subCarNo + " )");
+        holder.iv_icon.setBackgroundResource(getDrawableByCode(ConvertUtils.mapToString(map,"bankCode")));
         return convertView;
     }
 

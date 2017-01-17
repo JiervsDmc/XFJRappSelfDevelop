@@ -14,9 +14,11 @@ import com.huaxia.finance.consumer.adapter.OrderDetailAdapter;
 import com.huaxia.finance.consumer.base.BaseActivity;
 import com.huaxia.finance.consumer.bean.MessageHeader;
 import com.huaxia.finance.consumer.bean.MessageObject;
+import com.huaxia.finance.consumer.bean.PayInfoBean;
 import com.huaxia.finance.consumer.http.ApiCaller;
 import com.huaxia.finance.consumer.storage.Constant;
 import com.huaxia.finance.consumer.storage.UniqueKey;
+import com.huaxia.finance.consumer.util.ConvertUtils;
 import com.huaxia.finance.consumer.util.LogUtil;
 import com.huaxia.finance.consumer.util.MD5Util;
 import com.huaxia.finance.consumer.util.ToastUtils;
@@ -49,6 +51,11 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
     private int totalPeriod;
     private int payPosition;
     private List orderDetailList;
+    private String order_status;
+    private String paycorpusamt;
+    private String payfineamt;
+    private String payinteamt;
+    private String status;
 
     @Override
     protected int getLayout() {
@@ -107,6 +114,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                 LogUtil.getLogutil().d("还款计划结果是" + response);
                 if (head.getResponseCode().contains("0000")) {
                     productName = body.get("productName").toString();
+                    order_status = ConvertUtils.mapToString(body,"ORDER_STATUS");
                     if (!body.get("schedule").toString().isEmpty()) {
                         tvOrderNumber.setText(body.get("orderNo").toString());
                         if (body.get("orderStatus").toString().contains("ST02")) {
@@ -170,31 +178,32 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                 break;
         }
     }
-    String repayMoney;
-    String repayPeriod;
+    private String repayMoney;
+    private String repayPeriod;
+    private String seqid;
     @Override
     public void payOnline(int position) {
-
-        String seqid;
         boolean isOnePay;
-        String msg ;
         Map map = (Map)orderDetailList.get(position);
-        seqid = map.get("seqid").toString();
-        if(map.get("seqid").equals("0")){
-            repayMoney = map.get("payinteamt").toString();
+        seqid = ConvertUtils.mapToString(map,"seqid");
+        paycorpusamt = ConvertUtils.mapToString(map,"paycorpusamt");
+        payfineamt = ConvertUtils.mapToString(map,"payfineamt");
+        payinteamt = ConvertUtils.mapToString(map,"payinteamt");
+        status = ConvertUtils.mapToString(map,"status");
+        if(seqid.equals("0")){
+            repayMoney = payinteamt;
             isOnePay = true;
         }else{
-            repayMoney = map.get("payamt").toString();
+            repayMoney = ConvertUtils.mapToString(map,"payamt");
             isOnePay = false;
         }
         repayPeriod = isOnePay?"0":seqid;
+        if(ConvertUtils.equals(ConvertUtils.mapToString(map,"mayRepay"),"2")){
+            ToastUtils.showSafeToast(this,"该笔分期银行系统正在处理中，请稍后再试！");
+            return;
+        }
         if(position!=payPosition){
-//            if(map.get("status").toString().equals("030")){
-//                msg = "该笔分期银行系统正在处理中，请稍后再试！";
-//            }else{
-                msg = "请按分期期数顺序还款！";
-//            }
-            ToastUtils.showSafeToast(this,msg);
+            ToastUtils.showSafeToast(this,"请按分期期数顺序还款！");
         }else {
             checkIfCanPay();
         }
@@ -220,25 +229,35 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                     super.onResponse(response, id);
                     LogUtil.getLogutil().d("支付确认" + response);
                     if (head.getResponseCode().contains("0000")) {
-                        int second = 0;
-                        try {
-                            second = Integer.valueOf(body.get("second").toString());
-                        } catch (NumberFormatException e) {
-                            e.printStackTrace();
-                        }
+                        int second = ConvertUtils.mapToInt(body,"second");
                         List bankList = new ArrayList();
-                        String realName = body.get("name").toString();
-                        bankList = (List) body.get("bankList");
-                        Map payRecord = (Map) body.get("repayRecord");
-                        Intent intent = new Intent(OrderDetailActivity.this, PayActivity.class);
-                        intent.putExtra("orderNo", orderNo);
-                        intent.putExtra("productName", productName);
-                        intent.putExtra("repayMoney", repayMoney);
-                        intent.putExtra("repayPeriod", repayPeriod);
-                        intent.putExtra("totalPeriod", String.valueOf(totalPeriod));
+                        Map mapBank = ConvertUtils.mapToMap(body,"bank");
+                        if(mapBank!=null){
+                            bankList.add(mapBank);
+                        }
+                        Map payRecord = ConvertUtils.mapToMap(body,"repayRecord");
 
-                        intent.putExtra("second", second);
-                        intent.putExtra("realName", realName);
+                        Intent intent = new Intent(OrderDetailActivity.this, PayActivity.class);
+                        PayInfoBean info = new PayInfoBean();
+                        info.setOrderNo(orderNo);
+                        info.setStatus(status);
+                        info.setProductName(productName);
+                        info.setRepayMoney(repayMoney);
+                        info.setRepayPeriod(repayPeriod);
+                        info.setTotalPeriod(ConvertUtils.toString(totalPeriod));
+                        info.setSecond(second);
+                        info.setPaycorpusamt(paycorpusamt);
+                        info.setPayfineamt(payfineamt);
+                        info.setPlatformRisk("0");
+                        info.setPlatformFee("0");
+                        info.setPenaltyFee("0");
+                        info.setConsuleFee("0");
+                        info.setPlatformFeeCheck("0");
+                        info.setPlatformFeeService("0");
+                        info.setContractStatus(order_status);
+                        info.setPayinteamt(payinteamt);
+                        info.setSeqid(seqid);
+                        intent.putExtra("payinfo",info);
                         intent.putExtra("bankList", (Serializable) bankList);
                         intent.putExtra("payRecord", (Serializable) payRecord);
                         startActivity(intent);
